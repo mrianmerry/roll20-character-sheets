@@ -12,26 +12,40 @@
   --main-text: #f8f8f8;
 }
 
-/* Tab Visibility */
+/* Visibility */
 
-.sheet-character,
-.sheet-combat,
-.sheet-config,
-.sheet-journal,
-.sheet-mecha,
-input.sheet-hidden-setting {
+button.sheeet-tab-selection-option {
   display: none;
 }
 
-.sheet-tabs-toggle[value="character"] ~ div.sheet-character,
-.sheet-tabs-toggle[value="combat"] ~ div.sheet-combat,
-.sheet-tabs-toggle[value="configuration"] ~ div.sheet-config,
-.sheet-tabs-toggle[value="journal"] ~ div.sheet-journal,
-.sheet-tabs-toggle[value="mecha"] ~ div.sheet-mecha {
+.sheet-mecha,
+.sheet-pilot,
+.sheet-tab-combat,
+.sheet-tab-config,
+.sheet-tab-journal,
+.sheet-tab-mecha,
+.sheet-tab-pilot,
+input.sheet-hidden-setting {
+  display: none;
+}
+.sheet-char-type-toggle[value="mecha"] ~ div button.sheet-mecha,
+.sheet-char-type-toggle[value="pilot"] ~ div button.sheet-pilot {
+  display: grid;
+}
+
+.sheet-tabs-toggle[value="combat"] ~ div.sheet-tab-combat,
+.sheet-tabs-toggle[value="configuration"] ~ div.sheet-tab-config,
+.sheet-tabs-toggle[value="journal"] ~ div.sheet-tab-journal,
+.sheet-tabs-toggle[value="mecha"] ~ div.sheet-tab-mecha,
+.sheet-tabs-toggle[value="pilot"] ~ div.sheet-tab-pilot {
   display: block;
 }
 
 /* Styling */
+.sheet-container {
+  --oneSolidBorder: 1px var(--border) solid;
+  min-width: 680px;
+}
 
 h2 {
   color: var(--main-text);
@@ -43,7 +57,10 @@ span {
 }
 
 div.sheet-tab-selection {
-  border-bottom: 1px var(--border) solid;
+  border-bottom: var(--oneSolidBorder);
+  column-gap: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 button.sheet-tab-selection-option {
@@ -56,19 +73,18 @@ button.sheet-tab-selection-option {
 
 button.sheet-tab-selection-option:hover {
   background-color: var(--border);
-  border-left: 1px var(--border) solid;
-  border-right: 1px var(--border) solid;
-  border-top: 1px var(--border) solid;
+  border: var(--oneSolidBorder);
+  border-bottom: 1px transparent solid;
   transition-duration: 0.2s;
 }
 
-.sheet-character,
-.sheet-combat,
-.sheet-config,
-.sheet-journal,
-.sheet-mecha {
+.sheet-tab-combat,
+.sheet-tab-config,
+.sheet-tab-journal,
+.sheet-tab-mecha,
+.sheet-tab-pilot {
   background-color: var(--background);
-  border: 1px var(--border) solid;
+  border: var(--oneSolidBorder);
   border-top: none;
   color: var(--main-text);
   padding: 12px 6px;
@@ -76,7 +92,7 @@ button.sheet-tab-selection-option:hover {
 
 .sheet-creditation {
   background-color: var(--background);
-  border: 1px var(--border) solid;
+  border: var(--oneSolidBorder);
   border-top: none;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -84,11 +100,19 @@ button.sheet-tab-selection-option:hover {
   padding: 3px 6px;
 }
 
-.sheet-theme-setting select {
+.sheet-tab-config select {
   background: var(--background);
-  border: none;
+  border: var(--oneSolidBorder);
   color: var(--main-text);
-  width: auto;
+}
+
+.sheet-config-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sheet-config-option {
+  margin: 6px;
 }
 
 select.sheet-no-dropdown {

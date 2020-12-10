@@ -1,44 +1,55 @@
-<input class="sheet-theme-toggle" name="attr_selected-theme" type="hidden" value="light" />
+<input class="sheet-theme-toggle" name="attr_theme" type="hidden" value="light" />
 
 <div class="sheet-container">
+  <input type="hidden" class="sheet-char-type-toggle" name="attr_type" value="pilot" />
+
   <div class="sheet-tab-selection">
     <button class="sheet-tab-selection-option" name="act_combat" type="action">Combat</button>
-    <button class="sheet-tab-selection-option" name="act_character" type="action">Character</button>
-    <button class="sheet-tab-selection-option" name="act_mecha" type="action">Mecha</button>
+    <button class="sheet-tab-selection-option sheet-pilot" name="act_pilot" type="action">Pilot</button>
+    <button class="sheet-tab-selection-option sheet-mecha" name="act_mecha" type="action">Mecha</button>
     <button class="sheet-tab-selection-option" name="act_journal" type="action">Journal</button>
     <button class="sheet-tab-selection-option" name="act_configuration" type="action">Configuration</button>
   </div>
 
   <input type="hidden" class="sheet-tabs-toggle" name="attr_selected-tab" value="combat" />
 
-  <div class="sheet-combat">
+  <div class="sheet-tab-combat">
     <h2>Combat Shortcuts</h2>
-    <span>Combat shortcuts go here; hopefully this will have all character weapons and all mecha weapons</span>
+    <span>Combat shortcuts go here; hopefully this will have all attacks and defences!</span>
   </div>
 
-  <div class="sheet-character">
-    <h2>Character</h2>
-    <span>Character stuff goes here</span>
+  <div class="sheet-tab-pilot">
+    <h2>Pilot</h2>
+    <span>Pilot information goes here</span>
   </div>
 
-  <div class="sheet-mecha">
+  <div class="sheet-tab-mecha">
     <h2>Mecha</h2>
     <span>Mecha stuff goes here</span>
   </div>
 
-  <div class="sheet-journal">
+  <div class="sheet-tab-journal">
     <h2>Journal/Notes</h2>
     <span>Journal entries and notes go here</span>
   </div>
 
-  <div class="sheet-config">
+  <div class="sheet-tab-config">
     <h2>Configuration</h2>
-    <div class="sheet-theme-setting">
-      <span>Theme options:</span>
-      <select class="no-dropdown" name="attr_theme">
-        <option value="light" selected>Light</option>
-        <option value="dark">Dark</option>
-      </select>
+    <div class="sheet-config-grid">
+      <div class="sheet-config-option">
+        <span>Character Type:</span>
+        <select class="no-dropdown" name="attr_type">
+          <option value="pilot" selected>Pilot</option>
+          <option value="mecha">Mecha</option>
+        </select>
+      </div>
+      <div class="sheet-config-option">
+        <span>Theme:</span>
+        <select class="no-dropdown" name="attr_theme">
+          <option value="light" selected>Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
     </div>
   </div>
 
@@ -48,18 +59,12 @@
 </div>
 
 <script type="text/worker">
-  const tabNames = ["character", "combat", "configuration", "journal", "mecha"];
+  const tabNames = ["combat", "configuration", "journal", "mecha", "pilot"];
   tabNames.forEach(button => {
     on(`clicked:${button}`, function () {
       setAttrs({
         'selected-tab': button
       });
-    });
-  });
-
-  on("change:theme", function (eventInfo) {
-    setAttrs({
-      "selected-theme": eventInfo.newValue,
     });
   });
 </script>
