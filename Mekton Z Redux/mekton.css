@@ -1,0 +1,104 @@
+/* Themes */
+
+.sheet-theme-toggle[value="light"] ~ div.sheet-container {
+  --background: #f8f8f8;
+  --border: #e0e0e0;
+  --main-text: #303030;
+}
+
+.sheet-theme-toggle[value="dark"] ~ div.sheet-container {
+  --background: #303030;
+  --border: #505050;
+  --main-text: #f8f8f8;
+}
+
+/* Tab Visibility */
+
+.sheet-character,
+.sheet-combat,
+.sheet-config,
+.sheet-journal,
+.sheet-mecha,
+input.sheet-hidden-setting {
+  display: none;
+}
+
+.sheet-tabs-toggle[value="character"] ~ div.sheet-character,
+.sheet-tabs-toggle[value="combat"] ~ div.sheet-combat,
+.sheet-tabs-toggle[value="configuration"] ~ div.sheet-config,
+.sheet-tabs-toggle[value="journal"] ~ div.sheet-journal,
+.sheet-tabs-toggle[value="mecha"] ~ div.sheet-mecha {
+  display: block;
+}
+
+/* Styling */
+
+h2 {
+  color: var(--main-text);
+  margin-bottom: 6px;
+}
+
+span {
+  color: var(--main-text);
+}
+
+div.sheet-tab-selection {
+  border-bottom: 1px var(--border) solid;
+}
+
+button.sheet-tab-selection-option {
+  background-color: var(--background);
+  border: 1px transparent solid;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: var(--main-text);
+}
+
+button.sheet-tab-selection-option:hover {
+  background-color: var(--border);
+  border-left: 1px var(--border) solid;
+  border-right: 1px var(--border) solid;
+  border-top: 1px var(--border) solid;
+  transition-duration: 0.2s;
+}
+
+.sheet-character,
+.sheet-combat,
+.sheet-config,
+.sheet-journal,
+.sheet-mecha {
+  background-color: var(--background);
+  border: 1px var(--border) solid;
+  border-top: none;
+  color: var(--main-text);
+  padding: 12px 6px;
+}
+
+.sheet-creditation {
+  background-color: var(--background);
+  border: 1px var(--border) solid;
+  border-top: none;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  font-style: italic;
+  padding: 3px 6px;
+}
+
+.sheet-theme-setting select {
+  background: var(--background);
+  border: none;
+  color: var(--main-text);
+  width: auto;
+}
+
+select.sheet-no-dropdown {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+
+/* For IE10 */
+select.sheet-no-dropdown::-ms-expand {
+  display: none;
+}

@@ -1,0 +1,65 @@
+<input class="sheet-theme-toggle" name="attr_selected-theme" type="hidden" value="light" />
+
+<div class="sheet-container">
+  <div class="sheet-tab-selection">
+    <button class="sheet-tab-selection-option" name="act_combat" type="action">Combat</button>
+    <button class="sheet-tab-selection-option" name="act_character" type="action">Character</button>
+    <button class="sheet-tab-selection-option" name="act_mecha" type="action">Mecha</button>
+    <button class="sheet-tab-selection-option" name="act_journal" type="action">Journal</button>
+    <button class="sheet-tab-selection-option" name="act_configuration" type="action">Configuration</button>
+  </div>
+
+  <input type="hidden" class="sheet-tabs-toggle" name="attr_selected-tab" value="combat" />
+
+  <div class="sheet-combat">
+    <h2>Combat Shortcuts</h2>
+    <span>Combat shortcuts go here; hopefully this will have all character weapons and all mecha weapons</span>
+  </div>
+
+  <div class="sheet-character">
+    <h2>Character</h2>
+    <span>Character stuff goes here</span>
+  </div>
+
+  <div class="sheet-mecha">
+    <h2>Mecha</h2>
+    <span>Mecha stuff goes here</span>
+  </div>
+
+  <div class="sheet-journal">
+    <h2>Journal/Notes</h2>
+    <span>Journal entries and notes go here</span>
+  </div>
+
+  <div class="sheet-config">
+    <h2>Configuration</h2>
+    <div class="sheet-theme-setting">
+      <span>Theme options:</span>
+      <select class="no-dropdown" name="attr_theme">
+        <option value="light" selected>Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sheet-creditation">
+    <span> Developed by Ian! Huzzah! Sheet version 0.0.1 </span>
+  </div>
+</div>
+
+<script type="text/worker">
+  const tabNames = ["character", "combat", "configuration", "journal", "mecha"];
+  tabNames.forEach(button => {
+    on(`clicked:${button}`, function () {
+      setAttrs({
+        'selected-tab': button
+      });
+    });
+  });
+
+  on("change:theme", function (eventInfo) {
+    setAttrs({
+      "selected-theme": eventInfo.newValue,
+    });
+  });
+</script>
