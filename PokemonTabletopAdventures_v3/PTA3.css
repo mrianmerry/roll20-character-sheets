@@ -1785,18 +1785,28 @@ button[type="roll"].sheet-inline-roller {
   margin: 5px 0px;
 }
 
-.sheet-collapsible-feature .sheet-options-flag,
-.sheet-collapsible-feature .sheet-options-flag + span,
-.sheet-pokemon-move .sheet-options-flag,
-.sheet-pokemon-move .sheet-options-flag + span {
+.sheet-collapsible-feature > .sheet-options-flag,
+.sheet-collapsible-feature > .sheet-options-flag + span,
+.sheet-pokemon-move > .sheet-options-flag,
+.sheet-pokemon-move > .sheet-options-flag + span {
   top: 10px;
 }
 
-.sheet-collapsible-feature .sheet-options-flag:checked,
-.sheet-collapsible-feature .sheet-options-flag:checked + span,
-.sheet-pokemon-move .sheet-options-flag:checked,
-.sheet-pokemon-move .sheet-options-flag:checked + span {
+.sheet-feature-container > .sheet-options-flag,
+.sheet-feature-container > .sheet-options-flag + span {
+  right: 10px;
+}
+
+.sheet-collapsible-feature > .sheet-options-flag:checked,
+.sheet-collapsible-feature > .sheet-options-flag:checked + span,
+.sheet-pokemon-move > .sheet-options-flag:checked,
+.sheet-pokemon-move > .sheet-options-flag:checked + span {
   top: 13px;
+}
+
+.sheet-feature-container > .sheet-options-flag:checked,
+.sheet-feature-container > .sheet-options-flag:checked + span {
+  right: 13px;
 }
 
 .sheet-options-flag {
@@ -1834,8 +1844,9 @@ button[type="roll"].sheet-inline-roller {
   display: flex;
 }
 
-.sheet-collapsible-feature:hover .sheet-options-flag + span,
-.sheet-pokemon-move:hover .sheet-options-flag + span {
+.sheet-collapsible-feature:hover > .sheet-options-flag + span,
+.sheet-feature-container > .sheet-options-flag + span,
+.sheet-pokemon-move:hover > .sheet-options-flag + span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

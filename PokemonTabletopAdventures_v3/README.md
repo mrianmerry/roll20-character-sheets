@@ -23,7 +23,13 @@ Things we want to add to the character sheet, presented in no particular order o
 
 ## Changelog
 
-### Sep 23, 2023
+### Jan 11, 2024
+- Added support for collapsing the entire trainer features section
+
+<details>
+  <summary><u>Expand for 2023 Changes</u></summary>
+
+### Sep 23, 2023
 - Added an Advanced Class section to the Hybrid sheet's character details section
 
 ### Feb 22, 2023
@@ -44,6 +50,8 @@ Things we want to add to the character sheet, presented in no particular order o
   - Updated the scatter selection to change the attack rolls, so that lower-hit moves aren't rolling many sets of dice
   - Added support for scatter attacks that hit up to 10 times
   - Clarified the intent of each scatter type selection by explicitly stating how many hits are in each roll
+
+</details>
 
 <details>
   <summary><u>Expand for 2022 Changes</u></summary>
