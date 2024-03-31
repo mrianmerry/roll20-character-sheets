@@ -344,68 +344,67 @@
     <br />
 
     <div class="sheet-tab-trainer sheet-tab-pokemon sheet-tab-hybrid">
-      <div class="sheet-character-stat-grid">
-        <b class="sheet-show-on-mobile">HP</b>
-        <b class="sheet-show-on-mobile">Attack</b>
-        <b class="sheet-show-on-mobile">Defense</b>
-        <div class="sheet-ball sheet-hp-ball">
-          <b class="sheet-hide-on-mobile">Current HP<br /></b>
-          <input class="sheet-stat-ball-color" name="attr_HP" title="Attribute: HP" type="number" /><br />
-          <input class="sheet-stat-ball-color" name="attr_HP_max" title="Attribute: HP_max" type="number" /><br />
-          <p class="sheet-hide-on-mobile">Max HP</p>
+      <div class="sheet-character-image-stats-grid">
+        <div class="sheet-character-avatar">
+          <img class="sheet-avatar-image" name="attr_character_avatar">
         </div>
-        <div class="sheet-ball sheet-atk-ball">
-          <b class="sheet-hide-on-mobile">Attack<br /></b>
-          <input class="sheet-stat-ball-color" name="attr_ATK" title="Attribute: ATK" type="number" readonly /><br />
-          <button class="sheet-stat-roller" name="roll_attack_check" type="roll"
-            value="@{publicity_roll} &{template:skill-roll} {{base-attribute=atk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Generic Attack Check}} {{skill-roll=[[ 1d20 + [[ @{ATKMOD} + ?{Temp Modifier|0} ]] ]]}}">
-            <span name="attr_ATKMOD" title="Attribute: ATKMOD"></span>
-          </button>
-          <br />
-          <p class="sheet-hide-on-mobile">ATK mod</p>
-        </div>
-        <div class="sheet-ball sheet-def-ball">
-          <b class="sheet-hide-on-mobile">Defense<br /></b>
-          <input class="sheet-stat-ball-color" name="attr_DEF" title="Attribute: DEF" type="number" readonly /><br />
-          <button class="sheet-stat-roller" name="roll_defense_check" type="roll"
-            value="@{publicity_roll} &{template:skill-roll} {{base-attribute=def}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Generic Defense Check}} {{skill-roll=[[ 1d20 + [[ @{DEFMOD} + ?{Temp Modifier|0} ]] ]]}}">
-            <span name="attr_DEFMOD" title="Attribute: DEFMOD"></span>
-          </button>
-          <br />
-          <p class="sheet-hide-on-mobile">DEF mod</p>
-        </div>
-        <b class="sheet-show-on-mobile">Special Attack</b>
-        <b class="sheet-show-on-mobile">Special Defense</b>
-        <b class="sheet-show-on-mobile">Speed</b>
-        <div class="sheet-ball sheet-spatk-ball">
-          <b class="sheet-hide-on-mobile">Special Attack<br /></b>
-          <input class="sheet-stat-ball-color" name="attr_SPATK" title="Attribute: SPATK" type="number" readonly /><br />
-          <button class="sheet-stat-roller" name="roll_special_attack_check" type="roll"
-            value="@{publicity_roll} &{template:skill-roll} {{base-attribute=spatk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Generic Special Attack Check}} {{skill-roll=[[ 1d20 + [[ @{SPATKMOD} + ?{Temp Modifier|0} ]] ]]}}">
-            <span name="attr_SPATKMOD" title="Attribute: SPATKMOD"></span>
-          </button>
-          <br />
-          <p class="sheet-hide-on-mobile">SPATK mod</p>
-        </div>
-        <div class="sheet-ball sheet-spdef-ball">
-          <b class="sheet-hide-on-mobile">Special Defense<br /></b>
-          <input class="sheet-stat-ball-color" name="attr_SPDEF" title="Attribute: SPDEF" type="number" readonly /><br />
-          <button class="sheet-stat-roller" name="roll_special_defense_check" type="roll"
-            value="@{publicity_roll} &{template:skill-roll} {{base-attribute=spdef}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Generic Special Defense Check}} {{skill-roll=[[ 1d20 + [[ @{SPDEFMOD} + ?{Temp Modifier|0} ]] ]]}}">
-            <span name="attr_SPDEFMOD" title="Attribute: SPDEFMOD"></span>
-          </button>
-          <br />
-          <p class="sheet-hide-on-mobile">SPDEF mod</p>
-        </div>
-        <div class="sheet-ball sheet-spd-ball">
-          <b class="sheet-hide-on-mobile">Speed<br /></b>
-          <input class="sheet-stat-ball-color" name="attr_SPD" title="Attribute: SPD" type="number" readonly /><br />
-          <button class="sheet-stat-roller" name="roll_speed_check" type="roll"
-            value="@{publicity_roll} &{template:skill-roll} {{base-attribute=spd}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Generic Speed Check}} {{skill-roll=[[ 1d20 + [[ @{SPDMOD} + ?{Temp Modifier|0} ]] ]]}}">
-            <span name="attr_SPDMOD" title="Attribute: SPDMOD"></span>
-          </button>
-          <br />
-          <p class="sheet-hide-on-mobile">SPD mod</p>
+        <div class="sheet-character-stat-grid">
+          <div class="sheet-ball sheet-hp-ball">
+            <b>Current HP</b><br />
+            <input class="sheet-stat-ball-color" name="attr_HP" title="Attribute: HP" type="number" /><br />
+            <input class="sheet-stat-ball-color" name="attr_HP_max" title="Attribute: HP_max" type="number" /><br />
+            <p class="sheet-hide-on-mobile">Max HP</p>
+          </div>
+          <div class="sheet-ball sheet-atk-ball">
+            <b>Attack</b><br />
+            <input class="sheet-stat-ball-color" name="attr_ATK" title="Attribute: ATK" type="number" readonly /><br />
+            <button class="sheet-stat-roller" name="roll_attack_check" type="roll"
+              value="@{publicity_roll} &{template:skill-roll} {{base-attribute=atk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Generic Attack Check}} {{skill-roll=[[ 1d20 + [[ @{ATKMOD} + ?{Temp Modifier|0} ]] ]]}}">
+              <span name="attr_ATKMOD" title="Attribute: ATKMOD"></span>
+            </button>
+            <br />
+            <p class="sheet-hide-on-mobile">ATK mod</p>
+          </div>
+          <div class="sheet-ball sheet-def-ball">
+            <b>Defense</b><br />
+            <input class="sheet-stat-ball-color" name="attr_DEF" title="Attribute: DEF" type="number" readonly /><br />
+            <button class="sheet-stat-roller" name="roll_defense_check" type="roll"
+              value="@{publicity_roll} &{template:skill-roll} {{base-attribute=def}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Generic Defense Check}} {{skill-roll=[[ 1d20 + [[ @{DEFMOD} + ?{Temp Modifier|0} ]] ]]}}">
+              <span name="attr_DEFMOD" title="Attribute: DEFMOD"></span>
+            </button>
+            <br />
+            <p class="sheet-hide-on-mobile">DEF mod</p>
+          </div>
+          <div class="sheet-ball sheet-spatk-ball">
+            <b>Special Attack</b><br />
+            <input class="sheet-stat-ball-color" name="attr_SPATK" title="Attribute: SPATK" type="number" readonly /><br />
+            <button class="sheet-stat-roller" name="roll_special_attack_check" type="roll"
+              value="@{publicity_roll} &{template:skill-roll} {{base-attribute=spatk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Generic Special Attack Check}} {{skill-roll=[[ 1d20 + [[ @{SPATKMOD} + ?{Temp Modifier|0} ]] ]]}}">
+              <span name="attr_SPATKMOD" title="Attribute: SPATKMOD"></span>
+            </button>
+            <br />
+            <p class="sheet-hide-on-mobile">SPATK mod</p>
+          </div>
+          <div class="sheet-ball sheet-spdef-ball">
+            <b>Special Defense</b><br />
+            <input class="sheet-stat-ball-color" name="attr_SPDEF" title="Attribute: SPDEF" type="number" readonly /><br />
+            <button class="sheet-stat-roller" name="roll_special_defense_check" type="roll"
+              value="@{publicity_roll} &{template:skill-roll} {{base-attribute=spdef}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Generic Special Defense Check}} {{skill-roll=[[ 1d20 + [[ @{SPDEFMOD} + ?{Temp Modifier|0} ]] ]]}}">
+              <span name="attr_SPDEFMOD" title="Attribute: SPDEFMOD"></span>
+            </button>
+            <br />
+            <p class="sheet-hide-on-mobile">SPDEF mod</p>
+          </div>
+          <div class="sheet-ball sheet-spd-ball">
+            <b>Speed</b><br />
+            <input class="sheet-stat-ball-color" name="attr_SPD" title="Attribute: SPD" type="number" readonly /><br />
+            <button class="sheet-stat-roller" name="roll_speed_check" type="roll"
+              value="@{publicity_roll} &{template:skill-roll} {{base-attribute=spd}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Generic Speed Check}} {{skill-roll=[[ 1d20 + [[ @{SPDMOD} + ?{Temp Modifier|0} ]] ]]}}">
+              <span name="attr_SPDMOD" title="Attribute: SPDMOD"></span>
+            </button>
+            <br />
+            <p class="sheet-hide-on-mobile">SPD mod</p>
+          </div>
         </div>
       </div>
     </div>
