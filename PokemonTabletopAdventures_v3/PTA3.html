@@ -3336,6 +3336,26 @@
     </div>
   </rolltemplate>
 
+  <rolltemplate class="sheet-rolltemplate-inline-skill-roll">
+    <div class="sheet-container sheet-rolltemplate-color-setting-{{base-attribute}}-skill">
+      <div class="sheet-labelled-table-wrapper">
+        <span class="sheet-border-label">skill</span>
+        <table class="sheet-inline-skill-template">
+          <tbody>
+            <tr class="sheet-hide-on-mobile">
+              <td class="sheet-subhead">[performed by {{character-name}}](https://journal.roll20.net/character/{{character-id}}" name="name-link")</td>
+            </tr>
+            <tr>
+              <td class="sheet-label sheet-skill-roll">
+                <span>{{skill-name}}: {{skill-roll}}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </rolltemplate>
+
   <rolltemplate class="sheet-rolltemplate-feature-output">
     <div class="sheet-container sheet-rolltemplate-color-setting-{{type-color}}-move">
       <table class="sheet-feature-template">
