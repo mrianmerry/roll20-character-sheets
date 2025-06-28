@@ -23,6 +23,9 @@ Things we want to add to the character sheet, presented in no particular order o
 
 ## Changelog
 
+### Jun 28, 2025
+- Removed old skill roll template in favour of new redesign
+
 ### May 11, 2025
 - Updated move frequency options to match the updated rules
 

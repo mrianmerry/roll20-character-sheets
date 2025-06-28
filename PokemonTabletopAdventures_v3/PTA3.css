@@ -5,7 +5,7 @@
 .sheet-rolltemplate-multi-hit-move-roll,
 .sheet-rolltemplate-triple-hit-move-roll,
 .sheet-rolltemplate-feature-output,
-.sheet-rolltemplate-inline-skill-roll {
+.sheet-rolltemplate-skill-roll {
   --poke-bug: #c6d16e;
   --poke-bug-background: #ffffb280;
   --poke-bug-shaded: #828d2a;
@@ -99,7 +99,6 @@
   --stat-ro-spd: #ff99ff80;
 }
 
-.sheet-rolltemplate-inline-skill-roll,
 .sheet-rolltemplate-skill-roll {
   --atk-gradient: #bb5555;
   --atk-header: #ff9999;
@@ -1237,27 +1236,27 @@ button[type="roll"].sheet-stat-roller:hover {
 
 /* Inline Skill Roll */
 
-.sheet-rolltemplate-inline-skill-roll {
+.sheet-rolltemplate-skill-roll {
   --header-text: #000000;
   --main-text: #000000;
   --odd-row-bg: #d9d9d6;
   --row-bg: #e9e9e9;
 }
 
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-inline-skill-roll {
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-skill-roll {
   --header-text: #dddddd;
   --main-text: #dddddd;
   --odd-row-bg: #303030;
   --row-bg: #404040;
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-labelled-table-wrapper {
+.sheet-rolltemplate-skill-roll .sheet-labelled-table-wrapper {
   display: grid;
   grid-column-gap: 0px;
   grid-template-columns: 5% 95%;
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-labelled-table-wrapper span.sheet-border-label {
+.sheet-rolltemplate-skill-roll .sheet-labelled-table-wrapper span.sheet-border-label {
   background: var(--header-bg);
   border: 1px solid var(--border-color);
   border-left: none;
@@ -1277,7 +1276,7 @@ button[type="roll"].sheet-stat-roller:hover {
   -webkit-text-stroke: 0.5px var(--poke-all-dark-background);
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-container table.sheet-inline-skill-template {
+.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template {
   background: var(--row-bg);
   border: 1px solid var(--border-color);
   border-left: none;
@@ -1294,76 +1293,76 @@ button[type="roll"].sheet-stat-roller:hover {
   width: 100%;
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-container table.sheet-inline-skill-template td.sheet-label {
+.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template td.sheet-label {
   font-weight: bold;
   padding-left: 4px;
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-container table.sheet-inline-skill-template td.sheet-subhead {
+.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template td.sheet-subhead {
   border-bottom: 1px solid var(--odd-row-bg);
   font-size: 12px;
   font-style: italic;
   padding-left: 4px;
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-container table.sheet-inline-skill-template a {
+.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template a {
   color: var(--header-text);
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-container table.sheet-inline-skill-template .sheet-skill-roll .inlinerollresult {
+.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template .sheet-skill-roll .inlinerollresult {
   background: inherit;
   border: none;
   font-size: inherit;
   padding: 0px;
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-rolltemplate-color-setting-atk-skill {
+.sheet-rolltemplate-skill-roll .sheet-rolltemplate-color-setting-atk-skill {
   --border-color: var(--poke-all-dark-background);
   --header-bg: var(--atk-gradient);
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-rolltemplate-color-setting-def-skill {
+.sheet-rolltemplate-skill-roll .sheet-rolltemplate-color-setting-def-skill {
   --border-color: var(--poke-all-dark-background);
   --header-bg: var(--def-gradient);
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-rolltemplate-color-setting-spatk-skill {
+.sheet-rolltemplate-skill-roll .sheet-rolltemplate-color-setting-spatk-skill {
   --border-color: var(--poke-all-dark-background);
   --header-bg: var(--spatk-gradient);
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-rolltemplate-color-setting-spdef-skill {
+.sheet-rolltemplate-skill-roll .sheet-rolltemplate-color-setting-spdef-skill {
   --border-color: var(--poke-all-dark-background);
   --header-bg: var(--spdef-gradient);
 }
 
-.sheet-rolltemplate-inline-skill-roll .sheet-rolltemplate-color-setting-spd-skill {
+.sheet-rolltemplate-skill-roll .sheet-rolltemplate-color-setting-spd-skill {
   --border-color: var(--poke-all-dark-background);
   --header-bg: var(--spd-gradient);
 }
 
 
-.sheet-rolltemplate-inline-skill-roll.sheet-rolltemplate-darkmode .sheet-rolltemplate-color-setting-atk-skill {
+.sheet-rolltemplate-skill-roll.sheet-rolltemplate-darkmode .sheet-rolltemplate-color-setting-atk-skill {
   --border-color: var(--atk-gradient);
   --header-bg: var(--atk-header-dark);
 }
 
-.sheet-rolltemplate-inline-skill-roll.sheet-rolltemplate-darkmode .sheet-rolltemplate-color-setting-def-skill {
+.sheet-rolltemplate-skill-roll.sheet-rolltemplate-darkmode .sheet-rolltemplate-color-setting-def-skill {
   --border-color: var(--def-gradient);
   --header-bg: var(--def-header-dark);
 }
 
-.sheet-rolltemplate-inline-skill-roll.sheet-rolltemplate-darkmode .sheet-rolltemplate-color-setting-spatk-skill {
+.sheet-rolltemplate-skill-roll.sheet-rolltemplate-darkmode .sheet-rolltemplate-color-setting-spatk-skill {
   --border-color: var(--spatk-gradient);
   --header-bg: var(--spatk-header-dark);
 }
 
-.sheet-rolltemplate-inline-skill-roll.sheet-rolltemplate-darkmode .sheet-rolltemplate-color-setting-spdef-skill {
+.sheet-rolltemplate-skill-roll.sheet-rolltemplate-darkmode .sheet-rolltemplate-color-setting-spdef-skill {
   --border-color: var(--spdef-gradient);
   --header-bg: var(--spdef-header-dark);
 }
 
-.sheet-rolltemplate-inline-skill-roll.sheet-rolltemplate-darkmode .sheet-rolltemplate-color-setting-spd-skill {
+.sheet-rolltemplate-skill-roll.sheet-rolltemplate-darkmode .sheet-rolltemplate-color-setting-spd-skill {
   --border-color: var(--spd-gradient);
   --header-bg: var(--spd-header-dark);
 }
@@ -1376,8 +1375,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-ten-hit-move-roll,
 .sheet-rolltemplate-multi-hit-move-roll,
 .sheet-rolltemplate-triple-hit-move-roll,
-.sheet-rolltemplate-feature-output,
-.sheet-rolltemplate-skill-roll {
+.sheet-rolltemplate-feature-output {
   --header-text: #000000;
   --main-text: #000000;
   --odd-row-bg: #d9d9d6;
@@ -1390,8 +1388,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-ten-hit-move-roll,
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-multi-hit-move-roll,
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-triple-hit-move-roll,
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-feature-output,
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-skill-roll {
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-feature-output {
   --header-text: #dddddd;
   --main-text: #dddddd;
   --odd-row-bg: #303030;
@@ -1646,7 +1643,6 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container hr.sheet-border,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container hr.sheet-border,
 .sheet-rolltemplate-triple-hit-move-roll .sheet-container hr.sheet-border,
-.sheet-rolltemplate-skill-roll .sheet-container hr.sheet-border,
 .sheet-rolltemplate-feature-output .sheet-container hr.sheet-border {
   margin: 5px 0 5px 0;
   border-top: 1px solid var(--border-color);
@@ -1657,7 +1653,6 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template,
 .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template,
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template,
 .sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template {
   border: 1px solid var(--border-color);
   border-radius: 4px;
@@ -1685,8 +1680,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template .sheet-accuracy-roll .inlinerollresult,
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template .sheet-accuracy-roll .inlinerollresult,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template .sheet-accuracy-roll .inlinerollresult,
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template .sheet-accuracy-roll .inlinerollresult,
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template .sheet-skill-roll .inlinerollresult {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template .sheet-accuracy-roll .inlinerollresult {
   background: #000000;
   border: 2px solid #000000;
   color: #ffffff;
@@ -1815,7 +1809,6 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template a,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template a,
 .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template a,
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template a,
 .sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template a {
   color: var(--header-text);
   padding: 3px;
@@ -1830,7 +1823,6 @@ button[type="roll"].sheet-stat-roller:hover {
   padding: 4px 2px;
 }
 
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template td,
 .sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template td {
   padding: 8px 2px;
 }
@@ -1855,8 +1847,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template td.sheet-label,
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template td.sheet-label,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template td.sheet-label,
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template td.sheet-label,
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template td.sheet-label {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template td.sheet-label {
   font-weight: bold;
   line-height: 14px;
   text-align: center;
@@ -1880,8 +1871,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template td.sheet-subhead,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template td.sheet-subhead,
 .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template td.sheet-subhead,
-.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template td.sheet-subhead,
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template td.sheet-subhead {
+.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template td.sheet-subhead {
   padding: 4px;
   background: var(--box-bg);
   font-size: 12px;
@@ -1893,7 +1883,6 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template th,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template th,
 .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template th,
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template th,
 .sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template th {
   color: var(--header-text);
   padding: 6px;
@@ -1907,7 +1896,6 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(odd),
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(odd),
 .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(odd),
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template tr:nth-child(odd),
 .sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template tr:nth-child(odd) {
   background: var(--odd-row-bg);
 }
@@ -1917,7 +1905,6 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(even),
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(even),
 .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(even),
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template tr:nth-child(even),
 .sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template tr:nth-child(even) {
   background: var(--row-bg);
 }
@@ -2256,7 +2243,6 @@ input.sheet-capitalize {
   .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template,
   .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template,
   .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template,
-  .sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template,
   .sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template {
     border: 3px solid;
     border-collapse: collapse;
