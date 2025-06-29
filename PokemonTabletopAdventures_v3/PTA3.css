@@ -1236,27 +1236,31 @@ button[type="roll"].sheet-stat-roller:hover {
 
 /* Inline Skill Roll */
 
-.sheet-rolltemplate-skill-roll {
+.sheet-rolltemplate-skill-roll,
+.sheet-rolltemplate-feature-output {
   --header-text: #000000;
   --main-text: #000000;
   --odd-row-bg: #d9d9d6;
   --row-bg: #e9e9e9;
 }
 
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-skill-roll {
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-skill-roll,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-feature-output {
   --header-text: #dddddd;
   --main-text: #dddddd;
   --odd-row-bg: #303030;
   --row-bg: #404040;
 }
 
-.sheet-rolltemplate-skill-roll .sheet-labelled-table-wrapper {
+.sheet-rolltemplate-skill-roll .sheet-labelled-table-wrapper,
+.sheet-rolltemplate-feature-output .sheet-labelled-table-wrapper {
   display: grid;
   grid-column-gap: 0px;
   grid-template-columns: 5% 95%;
 }
 
-.sheet-rolltemplate-skill-roll .sheet-labelled-table-wrapper span.sheet-border-label {
+.sheet-rolltemplate-skill-roll .sheet-labelled-table-wrapper span.sheet-border-label,
+.sheet-rolltemplate-feature-output .sheet-labelled-table-wrapper span.sheet-border-label {
   background: var(--header-bg);
   border: 1px solid var(--border-color);
   border-left: none;
@@ -1276,7 +1280,8 @@ button[type="roll"].sheet-stat-roller:hover {
   -webkit-text-stroke: 0.5px var(--poke-all-dark-background);
 }
 
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template {
+.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template,
+.sheet-rolltemplate-feature-output .sheet-container table.sheet-new-feature-template {
   background: var(--row-bg);
   border: 1px solid var(--border-color);
   border-left: none;
@@ -1298,18 +1303,44 @@ button[type="roll"].sheet-stat-roller:hover {
   padding-left: 4px;
 }
 
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template td.sheet-subhead {
+.sheet-rolltemplate-feature-output .sheet-container table.sheet-new-feature-template th {
+  color: var(--header-text);
+  padding: 6px 0px 0px 8px;
+  font-family: Contrail One;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-feature-output .sheet-container table.sheet-new-feature-template td.sheet-subhead {
+  border-bottom: 1px solid var(--odd-row-bg);
+  font-size: 12px;
+  font-style: italic;
+  padding-left: 8px;
+  padding-bottom: 4px;
+  line-height: 12px;
+}
+
+.sheet-rolltemplate-feature-output .sheet-container .sheet-labelled-table-wrapper .sheet-new-feature-template td.sheet-notes-text {
+  font-size: 12px;
+  line-height: 12px;
+  padding: 8px;
+  text-transform: none;
+}
+
+.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template td.sheet-subhead{
   border-bottom: 1px solid var(--odd-row-bg);
   font-size: 12px;
   font-style: italic;
   padding-left: 4px;
 }
 
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template a {
+.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template a,
+.sheet-rolltemplate-feature-output .sheet-container table.sheet-new-feature-template a {
   color: var(--header-text);
 }
 
-.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template .sheet-skill-roll .inlinerollresult {
+.sheet-rolltemplate-skill-roll .sheet-container table.sheet-skill-template .sheet-skill-roll .inlinerollresult,
+.sheet-rolltemplate-feature-output .sheet-container table.sheet-new-feature-template .inlinerollresult  {
   background: inherit;
   border: none;
   font-size: inherit;
@@ -1374,8 +1405,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll,
 .sheet-rolltemplate-ten-hit-move-roll,
 .sheet-rolltemplate-multi-hit-move-roll,
-.sheet-rolltemplate-triple-hit-move-roll,
-.sheet-rolltemplate-feature-output {
+.sheet-rolltemplate-triple-hit-move-roll {
   --header-text: #000000;
   --main-text: #000000;
   --odd-row-bg: #d9d9d6;
@@ -1387,8 +1417,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-dual-hit-move-roll,
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-ten-hit-move-roll,
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-multi-hit-move-roll,
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-triple-hit-move-roll,
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-feature-output {
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-triple-hit-move-roll {
   --header-text: #dddddd;
   --main-text: #dddddd;
   --odd-row-bg: #303030;
@@ -1642,8 +1671,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container hr.sheet-border,
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container hr.sheet-border,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container hr.sheet-border,
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container hr.sheet-border,
-.sheet-rolltemplate-feature-output .sheet-container hr.sheet-border {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container hr.sheet-border{
   margin: 5px 0 5px 0;
   border-top: 1px solid var(--border-color);
 }
@@ -1652,8 +1680,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template,
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template,
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template,
-.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template {
   border: 1px solid var(--border-color);
   border-radius: 4px;
   border-collapse: separate;
@@ -1690,8 +1717,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template .sheet-notes-text .inlinerollresult,
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template .sheet-notes-text .inlinerollresult,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template .sheet-notes-text .inlinerollresult,
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template .sheet-notes-text .inlinerollresult,
-.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template .sheet-notes-text .inlinerollresult {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template .sheet-notes-text .inlinerollresult {
   background: #00000000;
   border: none;
   color: var(--main-text);
@@ -1808,8 +1834,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template a,
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template a,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template a,
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template a,
-.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template a {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template a {
   color: var(--header-text);
   padding: 3px;
   font-style: italic;
@@ -1821,10 +1846,6 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template td,
 .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template td {
   padding: 4px 2px;
-}
-
-.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template td {
-  padding: 8px 2px;
 }
 
 .sheet-rolltemplate-move-roll .sheet-container table.sheet-move-template td.sheet-effectiveness-text,
@@ -1858,8 +1879,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template td.sheet-notes-text,
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template td.sheet-notes-text,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template td.sheet-notes-text,
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template td.sheet-notes-text,
-.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template td.sheet-notes-text {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template td.sheet-notes-text {
   font-size: 12px;
   line-height: 12px;
   padding: 8px;
@@ -1870,8 +1890,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template td.sheet-subhead,
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template td.sheet-subhead,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template td.sheet-subhead,
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template td.sheet-subhead,
-.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template td.sheet-subhead {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template td.sheet-subhead {
   padding: 4px;
   background: var(--box-bg);
   font-size: 12px;
@@ -1882,8 +1901,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template th,
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template th,
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template th,
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template th,
-.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template th {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template th {
   color: var(--header-text);
   padding: 6px;
   font-size: 14px;
@@ -1895,8 +1913,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(odd),
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(odd),
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(odd),
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(odd),
-.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template tr:nth-child(odd) {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(odd) {
   background: var(--odd-row-bg);
 }
 
@@ -1904,8 +1921,7 @@ button[type="roll"].sheet-stat-roller:hover {
 .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(even),
 .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(even),
 .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(even),
-.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(even),
-.sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template tr:nth-child(even) {
+.sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template tr:nth-child(even) {
   background: var(--row-bg);
 }
 
@@ -2242,8 +2258,7 @@ input.sheet-capitalize {
   .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template,
   .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template,
   .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template,
-  .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template,
-  .sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template {
+  .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template {
     border: 3px solid;
     border-collapse: collapse;
     font-size: 16px;
@@ -2253,8 +2268,7 @@ input.sheet-capitalize {
   .sheet-rolltemplate-dual-hit-move-roll .sheet-container table.sheet-move-template td.sheet-notes-text,
   .sheet-rolltemplate-ten-hit-move-roll .sheet-container table.sheet-move-template td.sheet-notes-text,
   .sheet-rolltemplate-multi-hit-move-roll .sheet-container table.sheet-move-template td.sheet-notes-text,
-  .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template td.sheet-notes-text,
-  .sheet-rolltemplate-feature-output .sheet-container table.sheet-feature-template td.sheet-notes-text {
+  .sheet-rolltemplate-triple-hit-move-roll .sheet-container table.sheet-move-template td.sheet-notes-text {
     font-size: 16px;
     line-height: 1.5;
   }

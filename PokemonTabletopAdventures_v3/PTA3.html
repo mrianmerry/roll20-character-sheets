@@ -3555,16 +3555,20 @@ Table of Contents:
 
   <rolltemplate class="sheet-rolltemplate-feature-output">
     <div class="sheet-container sheet-rolltemplate-color-setting-{{type-color}}-move">
-      <table class="sheet-feature-template">
-        <tr><th>{{feature-name}}</th></tr>
-        <tr class="sheet-hide-on-mobile">
-          <td class="sheet-subhead">[{{character-name}}](https://journal.roll20.net/character/{{character-id}}" name="name-link")</td>
-        </tr>
-        <tr>
-          <td class="sheet-notes-text"><span>{{feature-text}}</span></td>
-        </tr>
-      </table>
-    </div>
+      <div class="sheet-labelled-table-wrapper">
+        <span class="sheet-border-label">feature</span>
+        <table class="sheet-new-feature-template">
+          <tbody>
+            <tr><th>{{feature-name}}</th></tr>
+            <tr class="sheet-hide-on-mobile">
+              <td class="sheet-subhead">[capability of {{character-name}}](https://journal.roll20.net/character/{{character-id}}" name="name-link")</td>
+            </tr>
+            <tr>
+              <td class="sheet-notes-text"><span>{{feature-text}}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </rolltemplate>
 </div>
 
