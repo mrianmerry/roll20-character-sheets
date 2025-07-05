@@ -1,34 +1,36 @@
 <!-- Table of Contents: -->
 <!--
 - Character Sheet
-  - Character Page........L#56
-    - Form Buttons........L#63
+  - Character Page........L#58
+    - Form Buttons........L#65
     - Info Sections
-      - Trainer...........L#97
-      - Pokemon...........L#146
-      - Hybrid............L#292
-    - Avatar..............L#433
-    - Trainer Stats.......L#567
-    - Pokemon Stats.......L#658
-    - Skills..............L#783  - Recalculate TOC line numbers
-    - Capture Pokemon.....L#967
+      - Trainer...........L#99
+      - Pokemon...........L#148
+      - Hybrid............L#294
+    - Avatar..............L#435
+    - Trainer Stats.......L#569
+    - Pokemon Stats.......L#660
+    - Skills
+      - Trainer...........L#795
+      - Pokemon/Hybrid....L#1398
+    - Capture Pokemon.....L#1599
     - Features
-      - Origin Feature....L#1090
-      - Class Features....L#1173
-    - Passives............L#1259
-    - Moves...............L#1281
-    - Notes...............L#1541
-  - Configuration Page....L#1607
+      - Origin Feature....L#1725
+      - Class Features....L#1808
+    - Passives............L#1894
+    - Moves...............L#1916
+    - Notes...............L#2176
+  - Configuration Page....L#2242
 - Roll Templates
-  - Move-Roll.............L#2127
-  - Dual-Hit-Move-Roll....L#2260
-  - Ten-Hit-Move-Roll.....L#2425
-  - Multi-Hit-Move-Roll...L#3014
-  - Triple-Hit-Move-Roll..L#3338
-  - Skill-Roll............L#3556
-  - Inline-Skill-Roll.....L#3575
-  - Feature-Output........L#3595
-- Sheet Scripts...........L#3611
+  - Move-Roll.............L#2762
+  - Dual-Hit-Move-Roll....L#2895
+  - Ten-Hit-Move-Roll.....L#3060
+  - Multi-Hit-Move-Roll...L#3649
+  - Triple-Hit-Move-Roll..L#3973
+  - Skill-Roll............L#4191
+  - Inline-Skill-Roll.....L#4210
+  - Feature-Output........L#4230
+- Sheet Scripts...........L#4246
 -->
 
 <!-- Background coloring strategy inspired by the GURPS sheet -->
@@ -103,7 +105,7 @@
         </div>
         <div class="sheet-options">
           <h3 class="sheet-section-header"><span name="attr_character_name"></span> the <span name="attr_class1"></span> (Level <span name="attr_level1"></span>)</h3>
-          <div class="sheet-2col-centered">
+          <div class="sheet-two-columns">
             <div class="sheet-character-name-grid">
               <b>Name</b>
               <input class="sheet-top-information" name="attr_character_name" spellcheck="false" title="Attribute: character_name" type="text" />
@@ -153,7 +155,7 @@
         <div class="sheet-options">
           <input class="sheet-character-type" name="attr_character-type" type="hidden" value="pokemon" />
           <h3 class="sheet-section-header"><span name="attr_character_name"></span> the <span name="attr_species"></span></h3>
-          <div class="sheet-2col-centered">
+          <div class="sheet-two-columns">
             <div class="sheet-character-name-grid">
               <b>Name</b>
               <input class="sheet-top-information" name="attr_character_name" spellcheck="false" title="Attribute: character_name" type="text" />
@@ -299,7 +301,7 @@
         <div class="sheet-options">
           <input class="sheet-character-type" name="attr_character-type" type="hidden" value="pokemon" />
           <h3 class="sheet-section-header"><span name="attr_character_name"></span> the <span name="attr_pokemon_advanced_class"></span> <span name="attr_species"></span> (Level <span name="attr_level1"></span>)</h3>
-          <div class="sheet-2col-centered">
+          <div class="sheet-two-columns">
             <div class="sheet-character-name-grid">
               <b>Name</b>
               <input class="sheet-top-information" name="attr_character_name" spellcheck="false" title="Attribute: character_name" type="text" />
@@ -610,7 +612,7 @@
               <p><label class="sheet-afflictions-text"><input name="attr_Toxified" value="1" title="Attribute: Toxified" type="checkbox" /> Toxified</label></p>
               <p><label class="sheet-afflictions-text"><input name="attr_Stunned" value="1" title="Attribute: Stunned" type="checkbox" /> Stunned</label></p>
             </div>
-            <div class="sheet-2col-centered">
+            <div class="sheet-two-columns">
               <b>Movement</b>
               <b class="sheet-hide-on-mobile">Bonus</b>
               <span><input class="sheet-speed-read-color" name="attr_movement" readonly title="Attribute: movement" type="number" /><b>ft</b></span>
@@ -701,7 +703,7 @@
               <p><label class="sheet-afflictions-text" ><input name="attr_Toxified" value="1" title="Attribute: Toxified" type="checkbox" /> Toxified</label></p>
               <p><label class="sheet-afflictions-text" ><input name="attr_Stunned" value="1" title="Attribute: Stunned" type="checkbox" /> Stunned</label></p>
             </div>
-            <div class="sheet-2col-centered">
+            <div class="sheet-two-columns">
               <b>Movement</b>
               <b class="sheet-hide-on-mobile">Bonus</b>
               <span><input class="sheet-speed-read-color" name="attr_movement" readonly title="Attribute: movement" type="number" /><b>ft</b></span>
@@ -787,11 +789,613 @@
         <h3 class="sheet-section-header">Skills</h3>
       </div>
       <div class="sheet-options">
+        <input class="sheet-character-type" name="attr_character-type" type="hidden" value="pokemon" />
         <h3 class="sheet-section-header">Skills</h3>
-    
-        <div class="sheet-tab-trainer sheet-tab-pokemon sheet-tab-hybrid">
-          <br />
-    
+
+        <div class="sheet-tab-trainer">
+          <div class="sheet-two-columns sheet-new-skills">
+            <div class="sheet-skills-column">
+              <div class="sheet-collapsible-skill sheet-acrobatics">
+                <input class="sheet-skill-color-setting" name="attr_acrobatics_ability_mod" type="hidden" value="SPD" />
+                <button class="sheet-skill-roller" name="roll_acrobaticscheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{acrobatics_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Acrobatics}} {{skill-roll=[[ 1d20!kh2 + @{acrobatics_total} ]]}}">
+                  Acrobatics (<span name="attr_acrobatics_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_acrobatics_total" readonly title="Attribute: acrobatics_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_acrobatics_options_flag" type="checkbox" />
+                <span name="attr_acrobatics_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_acrobaticstalent1" value="2" title="Attribute: acrobaticstalent1" type="checkbox" />
+                    <input name="attr_acrobaticstalent2" value="2" title="Attribute: acrobaticstalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_acrobatics_ability_mod" title="Select the attribute you want to use for Acrobatics.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option selected value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Acrobatics."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_acrobatics" value="0" title="Attribute: acrobatics" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-athletics">
+                <input class="sheet-skill-color-setting" name="attr_athletics_ability_mod" type="hidden" value="ATK" />
+                <button class="sheet-skill-roller" name="roll_athleticscheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{athletics_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Athletics}} {{skill-roll=[[ 1d20!kh2 + @{athletics_total} ]]}}">
+                  Athletics (<span name="attr_athletics_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_athletics_total" readonly title="Attribute: athletics_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_athletics_options_flag" type="checkbox" />
+                <span name="attr_athletics_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_athleticstalent1" value="2" title="Attribute: athleticstalent1" type="checkbox" />
+                    <input name="attr_athleticstalent2" value="2" title="Attribute: athleticstalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_athletics_ability_mod" title="Select the attribute you want to use for Athletics.">
+                      <option selected value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Athletics."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_athletics" value="0" title="Attribute: athletics" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-bluff">
+                <input class="sheet-skill-color-setting" name="attr_bluff_ability_mod" type="hidden" value="SPDEF" />
+                <button class="sheet-skill-roller" name="roll_bluffcheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{bluff_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Bluff/Deception}} {{skill-roll=[[ 1d20!kh2 + @{bluff_total} ]]}}">
+                  Bluff/Deception (<span name="attr_bluff_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_bluff_total" readonly title="Attribute: bluff_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_bluff_options_flag" type="checkbox" />
+                <span name="attr_bluff_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_blufftalent1" value="2" title="Attribute: blufftalent1" type="checkbox" />
+                    <input name="attr_blufftalent2" value="2" title="Attribute: blufftalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_bluff_ability_mod" title="Select the attribute you want to use for Bluff/Deception.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option selected value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Bluff/Deception."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_bluff" value="0" title="Attribute: bluff" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-concentration">
+                <input class="sheet-skill-color-setting" name="attr_concentration_ability_mod" type="hidden" value="DEF" />
+                <button class="sheet-skill-roller" name="roll_concentrationcheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{concentration_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Concentration}} {{skill-roll=[[ 1d20!kh2 + @{concentration_total} ]]}}">
+                  Concentration (<span name="attr_concentration_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_concentration_total" readonly title="Attribute: concentration_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_concentration_options_flag" type="checkbox" />
+                <span name="attr_concentration_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_concentrationtalent1" value="2" title="Attribute: concentrationtalent1" type="checkbox" />
+                    <input name="attr_concentrationtalent2" value="2" title="Attribute: concentrationtalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_concentration_ability_mod" title="Select the attribute you want to use for Concentration.">
+                      <option value="ATK">Attack</option>
+                      <option selected value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Concentration."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_concentration" value="0" title="Attribute: concentration" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-constitution">
+                <input class="sheet-skill-color-setting" name="attr_constitution_ability_mod" type="hidden" value="DEF" />
+                <button class="sheet-skill-roller" name="roll_constitutioncheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{constitution_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Constitution}} {{skill-roll=[[ 1d20!kh2 + @{constitution_total} ]]}}">
+                  Constitution (<span name="attr_constitution_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_constitution_total" readonly title="Attribute: constitution_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_constitution_options_flag" type="checkbox" />
+                <span name="attr_constitution_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_constitutiontalent1" value="2" title="Attribute: constitutiontalent1" type="checkbox" />
+                    <input name="attr_constitutiontalent2" value="2" title="Attribute: constitutiontalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_constitution_ability_mod" title="Select the attribute you want to use for Constitution.">
+                      <option value="ATK">Attack</option>
+                      <option selected value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Constitution."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_constitution" value="0" title="Attribute: constitution" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-diplomacy">
+                <input class="sheet-skill-color-setting" name="attr_diplomacy_ability_mod" type="hidden" value="DEF" />
+                <button class="sheet-skill-roller" name="roll_diplomacycheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{diplomacy_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Diplomacy/Persuasion}} {{skill-roll=[[ 1d20!kh2 + @{diplomacy_total} ]]}}">
+                  Diplomacy/Persuasion (<span name="attr_diplomacy_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_diplomacy_total" readonly title="Attribute: diplomacy_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_diplomacy_options_flag" type="checkbox" />
+                <span name="attr_diplomacy_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_diplomacytalent1" value="2" title="Attribute: diplomacytalent1" type="checkbox" />
+                    <input name="attr_diplomacytalent2" value="2" title="Attribute: diplomacytalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_diplomacy_ability_mod" title="Select the attribute you want to use for Diplomacy/Persuasion.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option selected value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Diplomacy/Persuasion."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_diplomacy" value="0" title="Attribute: diplomacy" type="number" />
+                  </span>
+                </div>
+              </div>
+                
+              <div class="sheet-collapsible-skill sheet-engineering">
+                <input class="sheet-skill-color-setting" name="attr_engineering_ability_mod" type="hidden" value="SPD" />
+                <button class="sheet-skill-roller" name="roll_engineeringcheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{engineering_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Engineering/Operation}} {{skill-roll=[[ 1d20!kh2 + @{engineering_total} ]]}}">
+                  Engineering/Operation (<span name="attr_engineering_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_engineering_total" readonly title="Attribute: engineering_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_engineering_options_flag" type="checkbox" />
+                <span name="attr_engineering_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_engineeringtalent1" value="2" title="Attribute: engineeringtalent1" type="checkbox" />
+                    <input name="attr_engineeringtalent2" value="2" title="Attribute: engineeringtalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_engineering_ability_mod" title="Select the attribute you want to use for Engineering/Operation.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option selected value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Engineering/Operation."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_engineering" value="0" title="Attribute: engineering" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-history">
+                <input class="sheet-skill-color-setting" name="attr_history_ability_mod" type="hidden" value="SPATK" />
+                <button class="sheet-skill-roller" name="roll_historycheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{history_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=History}} {{skill-roll=[[ 1d20!kh2 + @{history_total} ]]}}">
+                  History (<span name="attr_history_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_history_total" readonly title="Attribute: history_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_history_options_flag" type="checkbox" />
+                <span name="attr_history_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_historytalent1" value="2" title="Attribute: historytalent1" type="checkbox" />
+                    <input name="attr_historytalent2" value="2" title="Attribute: historytalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_history_ability_mod" title="Select the attribute you want to use for History.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option selected value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for History."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_history" value="0" title="Attribute: history" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-insight">
+                <input class="sheet-skill-color-setting" name="attr_insight_ability_mod" type="hidden" value="SPDEF" />
+                <button class="sheet-skill-roller" name="roll_insightcheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{insight_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Insight}} {{skill-roll=[[ 1d20!kh2 + @{insight_total} ]]}}">
+                  Insight (<span name="attr_insight_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_insight_total" readonly title="Attribute: insight_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_insight_options_flag" type="checkbox" />
+                <span name="attr_insight_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_insighttalent1" value="2" title="Attribute: insighttalent1" type="checkbox" />
+                    <input name="attr_insighttalent2" value="2" title="Attribute: insighttalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_insight_ability_mod" title="Select the attribute you want to use for Insight.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option selected value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Insight."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_insight" value="0" title="Attribute: insight" type="number" />
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sheet-skills-column">
+              <div class="sheet-collapsible-skill sheet-investigate">
+                <input class="sheet-skill-color-setting" name="attr_investigate_ability_mod" type="hidden" value="SPATK" />
+                <button class="sheet-skill-roller" name="roll_investigatecheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{investigate_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Investigate}} {{skill-roll=[[ 1d20!kh2 + @{investigate_total} ]]}}">
+                  Investigate (<span name="attr_investigate_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_investigate_total" readonly title="Attribute: investigate_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_investigate_options_flag" type="checkbox" />
+                <span name="attr_investigate_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_investigatetalent1" value="2" title="Attribute: investigatetalent1" type="checkbox" />
+                    <input name="attr_investigatetalent2" value="2" title="Attribute: investigatetalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_investigate_ability_mod" title="Select the attribute you want to use for Investigate.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option selected value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Investigate."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_investigate" value="0" title="Attribute: investigate" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-medicine">
+                <input class="sheet-skill-color-setting" name="attr_medicine_ability_mod" type="hidden" value="SPATK" />
+                <button class="sheet-skill-roller" name="roll_medicinecheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{medicine_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Medicine}} {{skill-roll=[[ 1d20!kh2 + @{medicine_total} ]]}}">
+                  Medicine (<span name="attr_medicine_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_medicine_total" readonly title="Attribute: medicine_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_medicine_options_flag" type="checkbox" />
+                <span name="attr_medicine_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_medicinetalent1" value="2" title="Attribute: medicinetalent1" type="checkbox" />
+                    <input name="attr_medicinetalent2" value="2" title="Attribute: medicinetalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_medicine_ability_mod" title="Select the attribute you want to use for Medicine.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option selected value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Medicine."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_medicine" value="0" title="Attribute: medicine" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-nature">
+                <input class="sheet-skill-color-setting" name="attr_nature_ability_mod" type="hidden" value="SPATK" />
+                <button class="sheet-skill-roller" name="roll_naturecheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{nature_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Nature}} {{skill-roll=[[ 1d20!kh2 + @{nature_total} ]]}}">
+                  Nature (<span name="attr_nature_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_nature_total" readonly title="Attribute: nature_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_nature_options_flag" type="checkbox" />
+                <span name="attr_nature_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_naturetalent1" value="2" title="Attribute: naturetalent1" type="checkbox" />
+                    <input name="attr_naturetalent2" value="2" title="Attribute: naturetalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_nature_ability_mod" title="Select the attribute you want to use for Nature.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option selected value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Nature."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_nature" value="0" title="Attribute: nature" type="number" />
+                  </span>
+                </div>
+              </div>
+                
+              <div class="sheet-collapsible-skill sheet-perception">
+                <input class="sheet-skill-color-setting" name="attr_perception_ability_mod" type="hidden" value="SPDEF" />
+                <button class="sheet-skill-roller" name="roll_perceptioncheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{perception_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Perception}} {{skill-roll=[[ 1d20!kh2 + @{perception_total} ]]}}">
+                  Perception (<span name="attr_perception_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_perception_total" readonly title="Attribute: perception_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_perception_options_flag" type="checkbox" />
+                <span name="attr_perception_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_perceptiontalent1" value="2" title="Attribute: perceptiontalent1" type="checkbox" />
+                    <input name="attr_perceptiontalent2" value="2" title="Attribute: perceptiontalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_perception_ability_mod" title="Select the attribute you want to use for Perception.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option selected value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Perception."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_perception" value="0" title="Attribute: perception" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-perform">
+                <input class="sheet-skill-color-setting" name="attr_perform_ability_mod" type="hidden" value="SPDEF" />
+                <button class="sheet-skill-roller" name="roll_performcheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{perform_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Perform}} {{skill-roll=[[ 1d20!kh2 + @{perform_total} ]]}}">
+                  Perform (<span name="attr_perform_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_perform_total" readonly title="Attribute: perform_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_perform_options_flag" type="checkbox" />
+                <span name="attr_perform_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_performtalent1" value="2" title="Attribute: performtalent1" type="checkbox" />
+                    <input name="attr_performtalent2" value="2" title="Attribute: performtalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_perform_ability_mod" title="Select the attribute you want to use for Perform.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option selected value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Perform."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_perform" value="0" title="Attribute: perform" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-handling">
+                <input class="sheet-skill-color-setting" name="attr_handling_ability_mod" type="hidden" value="SPDEF" />
+                <button class="sheet-skill-roller" name="roll_handlingcheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{handling_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Pokémon Handling}} {{skill-roll=[[ 1d20!kh2 + @{handling_total} ]]}}">
+                  Pokémon Handling (<span name="attr_handling_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_handling_total" readonly title="Attribute: handling_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_handling_options_flag" type="checkbox" />
+                <span name="attr_handling_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_handlingtalent1" value="2" title="Attribute: handlingtalent1" type="checkbox" />
+                    <input name="attr_handlingtalent2" value="2" title="Attribute: handlingtalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_handling_ability_mod" title="Select the attribute you want to use for Pokémon Handling.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option selected value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Pokémon Handling."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_handling" value="0" title="Attribute: handling" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-programming">
+                <input class="sheet-skill-color-setting" name="attr_programming_ability_mod" type="hidden" value="SPATK" />
+                <button class="sheet-skill-roller" name="roll_programmingcheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{programming_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Programming}} {{skill-roll=[[ 1d20!kh2 + @{programming_total} ]]}}">
+                  Programming (<span name="attr_programming_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_programming_total" readonly title="Attribute: programming_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_programming_options_flag" type="checkbox" />
+                <span name="attr_programming_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_programmingtalent1" value="2" title="Attribute: programmingtalent1" type="checkbox" />
+                    <input name="attr_programmingtalent2" value="2" title="Attribute: programmingtalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_programming_ability_mod" title="Select the attribute you want to use for Programming.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option selected value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Programming."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_programming" value="0" title="Attribute: programming" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-sleightofhand">
+                <input class="sheet-skill-color-setting" name="attr_sleightofhand_ability_mod" type="hidden" value="SPD" />
+                <button class="sheet-skill-roller" name="roll_sleightofhandcheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{sleightofhand_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Sleight of Hand}} {{skill-roll=[[ 1d20!kh2 + @{sleightofhand_total} ]]}}">
+                  Sleight of Hand (<span name="attr_sleightofhand_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_sleightofhand_total" readonly title="Attribute: sleightofhand_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_sleightofhand_options_flag" type="checkbox" />
+                <span name="attr_sleightofhand_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_sleightofhandtalent1" value="2" title="Attribute: sleightofhandtalent1" type="checkbox" />
+                    <input name="attr_sleightofhandtalent2" value="2" title="Attribute: sleightofhandtalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_sleightofhand_ability_mod" title="Select the attribute you want to use for Sleight of Hand.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option selected value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Sleight of Hand."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_sleightofhand" value="0" title="Attribute: sleightofhand" type="number" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="sheet-collapsible-skill sheet-stealth">
+                <input class="sheet-skill-color-setting" name="attr_stealth_ability_mod" type="hidden" value="SPD" />
+                <button class="sheet-skill-roller" name="roll_stealthcheck" type="roll"
+                  value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{stealth_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Stealth}} {{skill-roll=[[ 1d20!kh2 + @{stealth_total} ]]}}">
+                  Stealth (<span name="attr_stealth_ability_mod"></span>)
+                </button>
+                <input class="sheet-skill-total" name="attr_stealth_total" readonly title="Attribute: stealth_total" type="number" />
+                <input checked class="sheet-options-flag" name="attr_stealth_options_flag" type="checkbox" />
+                <span name="attr_stealth_flag">y</span>
+                <div class="sheet-options">
+                  <span>
+                    <b>Talents</b>
+                    <input name="attr_stealthtalent1" value="2" title="Attribute: stealthtalent1" type="checkbox" />
+                    <input name="attr_stealthtalent2" value="2" title="Attribute: stealthtalent2" type="checkbox" />
+                  </span>
+                  <span>
+                    <b>Base Attribute</b>
+                    <select class="sheet-no-dropdown" name="attr_stealth_ability_mod" title="Select the attribute you want to use for Stealth.">
+                      <option value="ATK">Attack</option>
+                      <option value="DEF">Defense</option>
+                      <option value="SPATK">Special Attack</option>
+                      <option value="SPDEF">Special Defense</option>
+                      <option selected value="SPD">Speed</option>
+                    </select>
+                    <b class="sheet-info-tooltip" title="Select the attribute you want to use for Stealth."> ℹ </b>
+                  </span>
+                  <span>
+                    <b>Bonus</b>
+                    <input name="attr_stealth" value="0" title="Attribute: stealth" type="number" />
+                  </span>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+        </div>
+        
+        <div class="sheet-tab-pokemon sheet-tab-hybrid">
           <div class="sheet-character-skill-labels">
             <b>Total</b>
             <b>Skill Name</b>
@@ -803,166 +1407,184 @@
             <b class="sheet-hide-on-mobile">Bonus</b>
           </div>
     
-          <div class="sheet-2col-centered">
+          <div class="sheet-two-columns">
             <div class="sheet-character-skills">
               <input class="sheet-skill-color-setting" name="attr_acrobatics_ability_mod" type="hidden" value="SPD" />
               <input class="sheet-skill-total" name="attr_acrobatics_total" readonly title="Attribute: acrobatics_total" type="number" />
               <button class="sheet-skill-roller" name="roll_acrobaticscheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spd}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Acrobatics}} {{skill-roll=[[ 1d20!kh2 + [[ @{acrobatics_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{acrobatics_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Acrobatics}} {{skill-roll=[[ 1d20!kh2 + [[ @{acrobatics_total} ]] ]]}}">
                 Acrobatics (<span name="attr_acrobatics_ability_mod"></span>)
               </button>
               <input name="attr_acrobaticstalent1" value="2" title="Attribute: acrobaticstalent1" type="checkbox" />
               <input name="attr_acrobaticstalent2" value="2" title="Attribute: acrobaticstalent2" type="checkbox" />
               <input name="attr_acrobatics" value="0" title="Attribute: acrobatics" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_athletics_ability_mod" type="hidden" value="ATK" />
               <input class="sheet-skill-total" name="attr_athletics_total" readonly title="Attribute: athletics_total" type="number" />
               <button class="sheet-skill-roller" name="roll_athleticscheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=atk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Athletics}} {{skill-roll=[[ 1d20!kh2 + [[ @{athletics_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{athletics_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Athletics}} {{skill-roll=[[ 1d20!kh2 + [[ @{athletics_total} ]] ]]}}">
                 Athletics (<span name="attr_athletics_ability_mod"></span>)
               </button>
               <input name="attr_athleticstalent1" value="2" title="Attribute: athleticstalent1" type="checkbox" />
               <input name="attr_athleticstalent2" value="2" title="Attribute: athleticstalent2" type="checkbox" />
               <input name="attr_athletics" value="0" title="Attribute: athletics" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_bluff_ability_mod" type="hidden" value="SPDEF" />
               <input class="sheet-skill-total" name="attr_bluff_total" readonly title="Attribute: bluff_total" type="number" />
               <button class="sheet-skill-roller" name="roll_bluffcheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spdef}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Bluff/Deception}} {{skill-roll=[[ 1d20!kh2 + [[ @{bluff_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{bluff_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Bluff/Deception}} {{skill-roll=[[ 1d20!kh2 + [[ @{bluff_total} ]] ]]}}">
                 Bluff/Deception (<span name="attr_bluff_ability_mod"></span>)
               </button>
               <input name="attr_blufftalent1" value="2" title="Attribute: blufftalent1" type="checkbox" />
               <input name="attr_blufftalent2" value="2" title="Attribute: blufftalent2" type="checkbox" />
               <input name="attr_bluff" value="0" title="Attribute: bluff" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_concentration_ability_mod" type="hidden" value="DEF" />
               <input class="sheet-skill-total" name="attr_concentration_total" readonly title="Attribute: concentration_total" type="number" />
               <button class="sheet-skill-roller" name="roll_concentrationcheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=def}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Concentration}} {{skill-roll=[[ 1d20!kh2 + [[ @{concentration_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{concentration_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Concentration}} {{skill-roll=[[ 1d20!kh2 + [[ @{concentration_total} ]] ]]}}">
                 Concentration (<span name="attr_concentration_ability_mod"></span>)
               </button>
               <input name="attr_concentrationtalent1" value="2" title="Attribute: concentrationtalent1" type="checkbox" />
               <input name="attr_concentrationtalent2" value="2" title="Attribute: concentrationtalent2" type="checkbox" />
               <input name="attr_concentration" value="0" title="Attribute: concentration" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_constitution_ability_mod" type="hidden" value="DEF" />
               <input class="sheet-skill-total" name="attr_constitution_total" readonly title="Attribute: constitution_total" type="number" />
               <button class="sheet-skill-roller" name="roll_constitutioncheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=def}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Constitution}} {{skill-roll=[[ 1d20!kh2 + [[ @{constitution_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{constitution_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Constitution}} {{skill-roll=[[ 1d20!kh2 + [[ @{constitution_total} ]] ]]}}">
                 Constitution (<span name="attr_constitution_ability_mod"></span>)
               </button>
               <input name="attr_constitutiontalent1" value="2" title="Attribute: constitutiontalent1" type="checkbox" />
               <input name="attr_constitutiontalent2" value="2" title="Attribute: constitutiontalent2" type="checkbox" />
               <input name="attr_constitution" value="0" title="Attribute: constitution" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_diplomacy_ability_mod" type="hidden" value="SPDEF" />
               <input class="sheet-skill-total" name="attr_diplomacy_total" readonly title="Attribute: diplomacy_total" type="number" />
               <button class="sheet-skill-roller" name="roll_diplomacycheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spdef}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Diplomacy/Persuasion}} {{skill-roll=[[ 1d20!kh2 + [[ @{diplomacy_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{diplomacy_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Diplomacy/Persuasion}} {{skill-roll=[[ 1d20!kh2 + [[ @{diplomacy_total} ]] ]]}}">
                 Diplomacy/Persuasion (<span name="attr_diplomacy_ability_mod"></span>)
               </button>
               <input name="attr_diplomacytalent1" value="2" title="Attribute: diplomacytalent1" type="checkbox" />
               <input name="attr_diplomacytalent2" value="2" title="Attribute: diplomacytalent2" type="checkbox" />
               <input name="attr_diplomacy" value="0" title="Attribute: diplomacy" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_engineering_ability_mod" type="hidden" value="SPATK" />
               <input class="sheet-skill-total" name="attr_engineering_total" readonly title="Attribute: engineering_total" type="number" />
               <button class="sheet-skill-roller" name="roll_engineeringcheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spatk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Engineering/Operation}} {{skill-roll=[[ 1d20!kh2 + [[ @{engineering_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{engineering_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Engineering/Operation}} {{skill-roll=[[ 1d20!kh2 + [[ @{engineering_total} ]] ]]}}">
                 Engineering/Operation (<span name="attr_engineering_ability_mod"></span>)
               </button>
               <input name="attr_engineeringtalent1" value="2" title="Attribute: engineeringtalent1" type="checkbox" />
               <input name="attr_engineeringtalent2" value="2" title="Attribute: engineeringtalent2" type="checkbox" />
               <input name="attr_engineering" value="0" title="Attribute: engineering" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_history_ability_mod" type="hidden" value="SPATK" />
               <input class="sheet-skill-total" name="attr_history_total" readonly title="Attribute: history_total" type="number" />
               <button class="sheet-skill-roller" name="roll_historycheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spatk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=History}} {{skill-roll=[[ 1d20!kh2 + [[ @{history_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{history_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=History}} {{skill-roll=[[ 1d20!kh2 + [[ @{history_total} ]] ]]}}">
                 History (<span name="attr_history_ability_mod"></span>)
               </button>
               <input name="attr_historytalent1" value="2" title="Attribute: historytalent1" type="checkbox" />
               <input name="attr_historytalent2" value="2" title="Attribute: historytalent2" type="checkbox" />
               <input name="attr_history" value="0" title="Attribute: history" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_insight_ability_mod" type="hidden" value="SPDEF" />
               <input class="sheet-skill-total" name="attr_insight_total" readonly title="Attribute: insight_total" type="number" />
               <button class="sheet-skill-roller" name="roll_insightcheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spdef}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Insight}} {{skill-roll=[[ 1d20!kh2 + [[ @{insight_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{insight_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Insight}} {{skill-roll=[[ 1d20!kh2 + [[ @{insight_total} ]] ]]}}">
                 Insight (<span name="attr_insight_ability_mod"></span>)
               </button>
               <input name="attr_insighttalent1" value="2" title="Attribute: insighttalent1" type="checkbox" />
               <input name="attr_insighttalent2" value="2" title="Attribute: insighttalent2" type="checkbox" />
               <input name="attr_insight" value="0" title="Attribute: insight" type="number" />
             </div>
+
             <div class="sheet-character-skills">
               <input class="sheet-skill-color-setting" name="attr_investigate_ability_mod" type="hidden" value="SPATK" />
               <input class="sheet-skill-total" name="attr_investigate_total" readonly title="Attribute: investigate_total" type="number" />
               <button class="sheet-skill-roller" name="roll_investigatecheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spatk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Investigate}} {{skill-roll=[[ 1d20!kh2 + [[ @{investigate_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{investigate_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Investigate}} {{skill-roll=[[ 1d20!kh2 + [[ @{investigate_total} ]] ]]}}">
                 Investigate (<span name="attr_investigate_ability_mod"></span>)
               </button>
               <input name="attr_investigatetalent1" value="2" title="Attribute: investigatetalent1" type="checkbox" />
               <input name="attr_investigatetalent2" value="2" title="Attribute: investigatetalent2" type="checkbox" />
               <input name="attr_investigate" value="0" title="Attribute: investigate" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_medicine_ability_mod" type="hidden" value="SPATK" />
               <input class="sheet-skill-total" name="attr_medicine_total" readonly title="Attribute: medicine_total" type="number" />
               <button class="sheet-skill-roller" name="roll_medicinecheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spatk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Medicine}} {{skill-roll=[[ 1d20!kh2 + [[ @{medicine_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{medicine_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Medicine}} {{skill-roll=[[ 1d20!kh2 + [[ @{medicine_total} ]] ]]}}">
                 Medicine (<span name="attr_medicine_ability_mod"></span>)
               </button>
               <input name="attr_medicinetalent1" value="2" title="Attribute: medicinetalent1" type="checkbox" />
               <input name="attr_medicinetalent2" value="2" title="Attribute: medicinetalent2" type="checkbox" />
               <input name="attr_medicine" value="0" title="Attribute: medicine" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_nature_ability_mod" type="hidden" value="SPATK" />
               <input class="sheet-skill-total" name="attr_nature_total" readonly title="Attribute: nature_total" type="number" />
               <button class="sheet-skill-roller" name="roll_naturecheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spatk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Nature}} {{skill-roll=[[ 1d20!kh2 + [[ @{nature_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{nature_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Nature}} {{skill-roll=[[ 1d20!kh2 + [[ @{nature_total} ]] ]]}}">
                 Nature (<span name="attr_nature_ability_mod"></span>)
               </button>
               <input name="attr_naturetalent1" value="2" title="Attribute: naturetalent1" type="checkbox" />
               <input name="attr_naturetalent2" value="2" title="Attribute: naturetalent2" type="checkbox" />
               <input name="attr_nature" value="0" title="Attribute: nature" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_perception_ability_mod" type="hidden" value="SPDEF" />
               <input class="sheet-skill-total" name="attr_perception_total" readonly title="Attribute: perception_total" type="number" />
               <button class="sheet-skill-roller" name="roll_perceptioncheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spdef}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Perception}} {{skill-roll=[[ 1d20!kh2 + [[ @{perception_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{perception_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Perception}} {{skill-roll=[[ 1d20!kh2 + [[ @{perception_total} ]] ]]}}">
                 Perception (<span name="attr_perception_ability_mod"></span>)
               </button>
               <input name="attr_perceptiontalent1" value="2" title="Attribute: perceptiontalent1" type="checkbox" />
               <input name="attr_perceptiontalent2" value="2" title="Attribute: perceptiontalent2" type="checkbox" />
               <input name="attr_perception" value="0" title="Attribute: perception" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_perform_ability_mod" type="hidden" value="SPDEF" />
               <input class="sheet-skill-total" name="attr_perform_total" readonly title="Attribute: perform_total" type="number" />
               <button class="sheet-skill-roller" name="roll_performcheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spdef}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Perform}} {{skill-roll=[[ 1d20!kh2 + [[ @{perform_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{perform_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Perform}} {{skill-roll=[[ 1d20!kh2 + [[ @{perform_total} ]] ]]}}">
                 Perform (<span name="attr_perform_ability_mod"></span>)
               </button>
               <input name="attr_performtalent1" value="2" title="Attribute: performtalent1" type="checkbox" />
               <input name="attr_performtalent2" value="2" title="Attribute: performtalent2" type="checkbox" />
               <input name="attr_perform" value="0" title="Attribute: perform" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_handling_ability_mod" type="hidden" value="SPDEF" />
               <input class="sheet-skill-total" name="attr_handling_total" readonly title="Attribute: handling_total" type="number" />
               <button class="sheet-skill-roller" name="roll_handlingcheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spdef}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Pokemon Handling}} {{skill-roll=[[ 1d20!kh2 + [[ @{handling_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{handling_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Pokemon Handling}} {{skill-roll=[[ 1d20!kh2 + [[ @{handling_total} ]] ]]}}">
                 Pokémon Handling (<span name="attr_handling_ability_mod"></span>)
               </button>
               <input name="attr_handlingtalent1" value="2" title="Attribute: handlingtalent1" type="checkbox" />
               <input name="attr_handlingtalent2" value="2" title="Attribute: handlingtalent2" type="checkbox" />
               <input name="attr_handling" value="0" title="Attribute: handling" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_programming_ability_mod" type="hidden" value="SPATK" />
               <input class="sheet-skill-total" name="attr_programming_total" readonly title="Attribute: programming_total" type="number" />
-              <button class="sheet-skill-roller" name="roll_programmingcheck" type="roll" value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spatk}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Programming}} {{skill-roll=[[ 1d20!kh2 + [[ @{programming_total} + ?{Temporary Bonus|0} ]] ]]}}">
+              <button class="sheet-skill-roller" name="roll_programmingcheck" type="roll"
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{programming_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Programming}} {{skill-roll=[[ 1d20!kh2 + [[ @{programming_total} ]] ]]}}">
                 Programming (<span name="attr_programming_ability_mod"></span>)
               </button>
               <input name="attr_programmingtalent1" value="2" title="Attribute: programmingtalent1" type="checkbox" />
               <input name="attr_programmingtalent2" value="2" title="Attribute: programmingtalent2" type="checkbox" />
               <input name="attr_programming" value="0" title="Attribute: programming" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_sleight_ability_mod" type="hidden" value="SPD" />
               <input class="sheet-skill-total" name="attr_sleightofhand_total" readonly title="Attribute: sleightofhand_total" type="number" />
               <button class="sheet-skill-roller" name="roll_sleightofhandcheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spd}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Sleight of Hand}} {{skill-roll=[[ 1d20!kh2 + [[ @{sleightofhand_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{sleight_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Sleight of Hand}} {{skill-roll=[[ 1d20!kh2 + [[ @{sleightofhand_total} ]] ]]}}">
                 Sleight of Hand (<span name="attr_sleight_ability_mod"></span>)
               </button>
               <input name="attr_sleightofhandtalent1" value="2" title="Attribute: sleightofhandtalent1" type="checkbox" />
               <input name="attr_sleightofhandtalent2" value="2" title="Attribute: sleightofhandtalent2" type="checkbox" />
               <input name="attr_sleightofhand" value="0" title="Attribute: sleightofhand" type="number" />
+
               <input class="sheet-skill-color-setting" name="attr_stealth_ability_mod" type="hidden" value="SPD" />
               <input class="sheet-skill-total" name="attr_stealth_total" readonly title="Attribute: stealth_total" type="number" />
               <button class="sheet-skill-roller" name="roll_stealthcheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spd}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Stealth}} {{skill-roll=[[ 1d20!kh2 + [[ @{stealth_total} + ?{Temporary Bonus|0} ]] ]]}}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{stealth_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Stealth}} {{skill-roll=[[ 1d20!kh2 + [[ @{stealth_total} ]] ]]}}">
                 Stealth (<span name="attr_stealth_ability_mod"></span>)
               </button>
               <input name="attr_stealthtalent1" value="2" title="Attribute: stealthtalent1" type="checkbox" />
@@ -983,7 +1605,7 @@
               <input class="sheet-skill-total" name="attr_capture_total" readonly title="The value added to your skill check to hit a Pokémon with a Pokéball. Note - this can be ignored if the target Pokémon is at or below half of their max HP.
               Attribute: capture_total" type="number" />
               <button class="sheet-skill-roller" name="roll_capturecheck" type="roll"
-                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=spd}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Capture Pokémon}} {{skill-roll=[[ 1d20 + @{capture_total} ]] Capture Roll: [[ d100 @{ball_capture_modifier} + @{capture_roll_bonus} ]] }}">
+                value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{capture_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Capture Pokémon}} {{skill-roll=[[ 1d20 + @{capture_total} ]] Capture Roll: [[ d100 @{ball_capture_modifier} + @{capture_roll_bonus} ]] }}">
                 Capture Pokémon (<span name="attr_capture_ability_mod"></span>)
               </button>
               <input name="attr_capture_default_custom_modifier" type="hidden" value="0" />
@@ -4627,7 +5249,7 @@
     updateFlagAttr("origin_flag", eventInfo.newValue);
   });
 
-  on("change:origin_skills_options_flag", functon (eventInfo) {
+  on("change:origin_skills_options_flag", function (eventInfo) {
     updateFlagAttr("skills_flag", eventInfo.newValue);
   });
 
