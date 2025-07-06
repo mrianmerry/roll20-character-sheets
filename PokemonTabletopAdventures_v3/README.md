@@ -23,6 +23,11 @@ Things we want to add to the character sheet, presented in no particular order o
 
 ## Changelog
 
+### Jul 6, 2025
+- Added a collapsing section for skills
+- Updated skill and capture pokémon visuals, for trainers only (for now)
+- Removed now-unneeded configuration page entry for skill attribute selection
+
 ### May 11, 2025
 - Updated move frequency options to match the updated rules
 
