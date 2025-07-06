@@ -610,7 +610,8 @@ div.sheet-3col-centered {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.sheet-skills-column > .sheet-collapsible-skill > div.sheet-options {
+.sheet-skills-column > .sheet-collapsible-skill > div.sheet-options,
+.sheet-collapsible-skill.sheet-capture > div.sheet-options {
   background: #0001;
   border: 1px solid var(--foreground-color);
   grid-area: 2 / 1 / 2 / 4;
@@ -620,15 +621,25 @@ div.sheet-3col-centered {
   grid-template-columns: 1fr 2fr;
 }
 
+.sheet-collapsible-skill.sheet-capture > div.sheet-options {
+  grid-template-columns: 2fr 1fr;
+}
+
 .sheet-collapsible-skill > .sheet-options > span > select {
   width: 50%;
+  margin-right: 10px;
 }
 
 .sheet-collapsible-skill > .sheet-options > span + span + span {
   grid-column: 1 / 3;
 }
 
-.sheet-skills-column > .sheet-collapsible-skill > input.sheet-skill-total {
+.sheet-collapsible-skill.sheet-capture > .sheet-options > span + span + span {
+  grid-column: auto;
+}
+
+.sheet-skills-column > .sheet-collapsible-skill > input.sheet-skill-total,
+.sheet-collapsible-skill.sheet-capture > input.sheet-skill-total {
   height: 24px;
   width: 80%;
   margin-left: 8px;
@@ -851,11 +862,6 @@ label.sheet-afflictions-text {
 
 .sheet-tiny-text {
   width: 50px;
-}
-
-.charsheet input.sheet-total-display.sheet-tiny-number[type="text"] {
-  width: 25px;
-  padding: 0px;
 }
 
 .sheet-damage-dice {
@@ -2423,18 +2429,6 @@ input.sheet-capitalize {
 
   .sheet-half-text {
     width: 65px;
-  }
-
-  .sheet-capture-pokemon-skill-m1 {
-    align-items: center;
-    display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
-  }
-
-  .sheet-capture-pokemon-skill-m2 {
-    align-items: center;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
   }
 
   .sheet-move-modifiers {
