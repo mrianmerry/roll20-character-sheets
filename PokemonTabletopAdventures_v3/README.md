@@ -23,6 +23,11 @@ Things we want to add to the character sheet, presented in no particular order o
 
 ## Changelog
 
+
+### Jul 20, 2025
+- Added Collapse/Expand button for all skills, so a single click closes/opens them all
+- Updated the colour used for the highlighted skill and all skill totals in dark mode to have a better contrast
+
 ### Jul 14, 2025
 - Added a collapsing section for skills
 - Fixed an issue where pokémon nature would affect trainer stats
