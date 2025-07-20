@@ -251,11 +251,6 @@
                 <option value="quirky">Quirky</option>
                 <option value="other">Other</option>
               </select>
-              <!-- Moved to other column on Mobile -->
-              <b class="sheet-hide-on-mobile">Held Item</b>
-              <input class="sheet-top-information sheet-hide-on-mobile" name="attr_item" spellcheck="false" title="Attribute: item" type="text" />
-              <!-- Add extra space here on mobile -->
-              <p class="sheet-show-on-mobile"></br></p>
             </div>
 
             <div class="sheet-character-name-grid">
@@ -278,11 +273,19 @@
               <input class="sheet-top-information" name="attr_pokemon_sex" spellcheck="false" title="Attribute: pokemon_sex" type="text" />
               <b>Diet</b>
               <input class="sheet-top-information" name="attr_diet" spellcheck="false" title="Attribute: diet" type="text" />
-              <!-- Moved here for Mobile, intentionally arranged with Egg Group for two-word sizes -->
-              <b class="sheet-show-on-mobile">Held Item</b>
-              <input class="sheet-top-information sheet-show-on-mobile" name="attr_item" spellcheck="false" title="Attribute: item" type="text" />
               <b>Egg Group</b>
               <input class="sheet-top-information" name="attr_egg_group" spellcheck="false" title="Attribute: egg_group" type="text" />
+            </div>
+          </div>
+          <div class="sheet-feature-container sheet-no-background">
+            <input checked class="sheet-options-flag" name="attr_held_item_options_flag" type="checkbox" />
+            <span name="attr_held_item_flag">.</span>
+            <div class="sheet-display">
+              <b class="sheet-subsection-header">Held Item</b>
+            </div>
+            <div class="sheet-options">
+              <b class="sheet-subsection-header">Held Item</b>
+              <textarea class="sheet-2row-textarea-wide" name="attr_item" spellcheck="false" title="Attribute: item">Add details for your held item here</textarea>
             </div>
           </div>
         </div>
@@ -351,8 +354,6 @@
               <span class="sheet-show-on-mobile">
                 <input class="sheet-top-information" name="attr_pokemon_advanced_class" spellcheck="false" title="Attribute: pokemon_advanced_class" type="text" value=" "/>
               </span>
-              <b>Credits</b>
-              <input class="sheet-top-information sheet-long-number" name="attr_credits" title="Attribute: credits" type="number" />
               <span class="sheet-show-on-mobile">
                 <b>Level</b>
               </span>
@@ -419,8 +420,19 @@
               <input class="sheet-top-information" name="attr_egg_group" spellcheck="false" title="Attribute: egg_group" type="text" />
               <b>Diet</b>
               <input class="sheet-top-information" name="attr_diet" spellcheck="false" title="Attribute: diet" type="text" />
-              <b>Held Item</b>
-              <input class="sheet-top-information" name="attr_item" spellcheck="false" title="Attribute: item" type="text" />
+              <b>Credits</b>
+              <input class="sheet-top-information sheet-long-number" name="attr_credits" title="Attribute: credits" type="number" />
+            </div>
+          </div>
+          <div class="sheet-feature-container sheet-no-background">
+            <input checked class="sheet-options-flag" name="attr_held_item_options_flag" type="checkbox" />
+            <span name="attr_held_item_flag">.</span>
+            <div class="sheet-display">
+              <b class="sheet-subsection-header">Held Item</b>
+            </div>
+            <div class="sheet-options">
+              <b class="sheet-subsection-header">Held Item</b>
+              <textarea class="sheet-2row-textarea-wide" name="attr_item" spellcheck="false" title="Attribute: item">Add details for your held item here</textarea>
             </div>
           </div>
         </div>

@@ -24,6 +24,7 @@ Things we want to add to the character sheet, presented in no particular order o
 ## Changelog
 
 ### Jul 20, 2025
+- Added collapsing section for giving held items a description to prevent continuous cross-referencing
 - Added skill talent pips to the skill roll button
 
 ### Jul 20, 2025
