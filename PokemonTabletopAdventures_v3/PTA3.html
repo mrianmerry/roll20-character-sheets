@@ -11,24 +11,24 @@
     - Trainer Stats.......L#567
     - Pokemon Stats.......L#658
     - Skills..............L#783
-    - Capture Pokemon.....L#1409
+    - Capture Pokemon.....L#1445
     - Features
-      - Origin Feature....L#1488
-      - Class Features....L#1581
-    - Passives............L#1667
-    - Moves...............L#1689
-    - Notes...............L#1950
-  - Configuration Page....L#2016
+      - Origin Feature....L#1534
+      - Class Features....L#1617
+    - Passives............L#1703
+    - Moves...............L#1725
+    - Notes...............L#1986
+  - Configuration Page....L#2052
 - Roll Templates
-  - Move-Roll.............L#2498
-  - Dual-Hit-Move-Roll....L#2631
-  - Ten-Hit-Move-Roll.....L#2796
-  - Multi-Hit-Move-Roll...L#3385
-  - Triple-Hit-Move-Roll..L#3709
-  - Skill-Roll............L#3927
-  - Inline-Skill-Roll.....L#3946
-  - Feature-Output........L#3966
-- Sheet Scripts...........L#3982
+  - Move-Roll.............L#2534
+  - Dual-Hit-Move-Roll....L#2667
+  - Ten-Hit-Move-Roll.....L#2832
+  - Multi-Hit-Move-Roll...L#3421
+  - Triple-Hit-Move-Roll..L#3745
+  - Skill-Roll............L#3963
+  - Inline-Skill-Roll.....L#3982
+  - Feature-Output........L#4002
+- Sheet Scripts...........L#4011
 -->
 
 <!-- Background coloring strategy inspired by the GURPS sheet -->
@@ -809,6 +809,8 @@
                 <button class="sheet-skill-roller" name="roll_acrobaticscheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{acrobatics_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Acrobatics}} {{skill-roll=[[ 1d20!kh2 + @{acrobatics_total} ]]}}">
                   Acrobatics (<span name="attr_acrobatics_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_acrobaticstalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_acrobaticstalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_acrobatics_total" readonly title="Attribute: acrobatics_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_acrobatics_options_flag" type="checkbox" />
@@ -816,8 +818,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_acrobaticstalent1" value="2" title="Attribute: acrobaticstalent1" type="checkbox" />
-                    <input name="attr_acrobaticstalent2" value="2" title="Attribute: acrobaticstalent2" type="checkbox" />
+                    <input name="attr_acrobaticstalent1" title="Attribute: acrobaticstalent1" type="checkbox" value="2" />
+                    <input name="attr_acrobaticstalent2" title="Attribute: acrobaticstalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -842,6 +844,8 @@
                 <button class="sheet-skill-roller" name="roll_athleticscheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{athletics_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Athletics}} {{skill-roll=[[ 1d20!kh2 + @{athletics_total} ]]}}">
                   Athletics (<span name="attr_athletics_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_athleticstalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_athleticstalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_athletics_total" readonly title="Attribute: athletics_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_athletics_options_flag" type="checkbox" />
@@ -849,8 +853,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_athleticstalent1" value="2" title="Attribute: athleticstalent1" type="checkbox" />
-                    <input name="attr_athleticstalent2" value="2" title="Attribute: athleticstalent2" type="checkbox" />
+                    <input name="attr_athleticstalent1" title="Attribute: athleticstalent1" type="checkbox" value="2" />
+                    <input name="attr_athleticstalent2" title="Attribute: athleticstalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -875,6 +879,8 @@
                 <button class="sheet-skill-roller" name="roll_bluffcheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{bluff_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Bluff/Deception}} {{skill-roll=[[ 1d20!kh2 + @{bluff_total} ]]}}">
                   Bluff/Deception (<span name="attr_bluff_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_blufftalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_blufftalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_bluff_total" readonly title="Attribute: bluff_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_bluff_options_flag" type="checkbox" />
@@ -882,8 +888,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_blufftalent1" value="2" title="Attribute: blufftalent1" type="checkbox" />
-                    <input name="attr_blufftalent2" value="2" title="Attribute: blufftalent2" type="checkbox" />
+                    <input name="attr_blufftalent1" title="Attribute: blufftalent1" type="checkbox" value="2" />
+                    <input name="attr_blufftalent2" title="Attribute: blufftalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -908,6 +914,8 @@
                 <button class="sheet-skill-roller" name="roll_concentrationcheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{concentration_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Concentration}} {{skill-roll=[[ 1d20!kh2 + @{concentration_total} ]]}}">
                   Concentration (<span name="attr_concentration_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_concentrationtalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_concentrationtalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_concentration_total" readonly title="Attribute: concentration_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_concentration_options_flag" type="checkbox" />
@@ -915,8 +923,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_concentrationtalent1" value="2" title="Attribute: concentrationtalent1" type="checkbox" />
-                    <input name="attr_concentrationtalent2" value="2" title="Attribute: concentrationtalent2" type="checkbox" />
+                    <input name="attr_concentrationtalent1" title="Attribute: concentrationtalent1" type="checkbox" value="2" />
+                    <input name="attr_concentrationtalent2" title="Attribute: concentrationtalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -941,6 +949,8 @@
                 <button class="sheet-skill-roller" name="roll_constitutioncheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{constitution_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Constitution}} {{skill-roll=[[ 1d20!kh2 + @{constitution_total} ]]}}">
                   Constitution (<span name="attr_constitution_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_constitutiontalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_constitutiontalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_constitution_total" readonly title="Attribute: constitution_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_constitution_options_flag" type="checkbox" />
@@ -948,8 +958,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_constitutiontalent1" value="2" title="Attribute: constitutiontalent1" type="checkbox" />
-                    <input name="attr_constitutiontalent2" value="2" title="Attribute: constitutiontalent2" type="checkbox" />
+                    <input name="attr_constitutiontalent1" title="Attribute: constitutiontalent1" type="checkbox" value="2" />
+                    <input name="attr_constitutiontalent2" title="Attribute: constitutiontalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -974,6 +984,8 @@
                 <button class="sheet-skill-roller" name="roll_diplomacycheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{diplomacy_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Diplomacy/Persuasion}} {{skill-roll=[[ 1d20!kh2 + @{diplomacy_total} ]]}}">
                   Diplomacy/Persuasion (<span name="attr_diplomacy_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_diplomacytalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_diplomacytalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_diplomacy_total" readonly title="Attribute: diplomacy_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_diplomacy_options_flag" type="checkbox" />
@@ -981,8 +993,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_diplomacytalent1" value="2" title="Attribute: diplomacytalent1" type="checkbox" />
-                    <input name="attr_diplomacytalent2" value="2" title="Attribute: diplomacytalent2" type="checkbox" />
+                    <input name="attr_diplomacytalent1" title="Attribute: diplomacytalent1" type="checkbox" value="2" />
+                    <input name="attr_diplomacytalent2" title="Attribute: diplomacytalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1007,6 +1019,8 @@
                 <button class="sheet-skill-roller" name="roll_engineeringcheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{engineering_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Engineering/Operation}} {{skill-roll=[[ 1d20!kh2 + @{engineering_total} ]]}}">
                   Engineering/Operation (<span name="attr_engineering_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_engineeringtalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_engineeringtalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_engineering_total" readonly title="Attribute: engineering_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_engineering_options_flag" type="checkbox" />
@@ -1014,8 +1028,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_engineeringtalent1" value="2" title="Attribute: engineeringtalent1" type="checkbox" />
-                    <input name="attr_engineeringtalent2" value="2" title="Attribute: engineeringtalent2" type="checkbox" />
+                    <input name="attr_engineeringtalent1" title="Attribute: engineeringtalent1" type="checkbox" value="2" />
+                    <input name="attr_engineeringtalent2" title="Attribute: engineeringtalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1040,6 +1054,8 @@
                 <button class="sheet-skill-roller" name="roll_historycheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{history_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=History}} {{skill-roll=[[ 1d20!kh2 + @{history_total} ]]}}">
                   History (<span name="attr_history_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_historytalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_historytalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_history_total" readonly title="Attribute: history_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_history_options_flag" type="checkbox" />
@@ -1047,8 +1063,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_historytalent1" value="2" title="Attribute: historytalent1" type="checkbox" />
-                    <input name="attr_historytalent2" value="2" title="Attribute: historytalent2" type="checkbox" />
+                    <input name="attr_historytalent1" title="Attribute: historytalent1" type="checkbox" value="2" />
+                    <input name="attr_historytalent2" title="Attribute: historytalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1073,6 +1089,8 @@
                 <button class="sheet-skill-roller" name="roll_insightcheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{insight_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Insight}} {{skill-roll=[[ 1d20!kh2 + @{insight_total} ]]}}">
                   Insight (<span name="attr_insight_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_insighttalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_insighttalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_insight_total" readonly title="Attribute: insight_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_insight_options_flag" type="checkbox" />
@@ -1080,8 +1098,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_insighttalent1" value="2" title="Attribute: insighttalent1" type="checkbox" />
-                    <input name="attr_insighttalent2" value="2" title="Attribute: insighttalent2" type="checkbox" />
+                    <input name="attr_insighttalent1" title="Attribute: insighttalent1" type="checkbox" value="2" />
+                    <input name="attr_insighttalent2" title="Attribute: insighttalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1108,6 +1126,8 @@
                 <button class="sheet-skill-roller" name="roll_investigatecheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{investigate_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Investigate}} {{skill-roll=[[ 1d20!kh2 + @{investigate_total} ]]}}">
                   Investigate (<span name="attr_investigate_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_investigatetalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_investigatetalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_investigate_total" readonly title="Attribute: investigate_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_investigate_options_flag" type="checkbox" />
@@ -1115,8 +1135,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_investigatetalent1" value="2" title="Attribute: investigatetalent1" type="checkbox" />
-                    <input name="attr_investigatetalent2" value="2" title="Attribute: investigatetalent2" type="checkbox" />
+                    <input name="attr_investigatetalent1" title="Attribute: investigatetalent1" type="checkbox" value="2" />
+                    <input name="attr_investigatetalent2" title="Attribute: investigatetalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1141,6 +1161,8 @@
                 <button class="sheet-skill-roller" name="roll_medicinecheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{medicine_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Medicine}} {{skill-roll=[[ 1d20!kh2 + @{medicine_total} ]]}}">
                   Medicine (<span name="attr_medicine_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_medicinetalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_medicinetalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_medicine_total" readonly title="Attribute: medicine_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_medicine_options_flag" type="checkbox" />
@@ -1148,8 +1170,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_medicinetalent1" value="2" title="Attribute: medicinetalent1" type="checkbox" />
-                    <input name="attr_medicinetalent2" value="2" title="Attribute: medicinetalent2" type="checkbox" />
+                    <input name="attr_medicinetalent1" title="Attribute: medicinetalent1" type="checkbox" value="2" />
+                    <input name="attr_medicinetalent2" title="Attribute: medicinetalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1174,6 +1196,8 @@
                 <button class="sheet-skill-roller" name="roll_naturecheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{nature_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Nature}} {{skill-roll=[[ 1d20!kh2 + @{nature_total} ]]}}">
                   Nature (<span name="attr_nature_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_naturetalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_naturetalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_nature_total" readonly title="Attribute: nature_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_nature_options_flag" type="checkbox" />
@@ -1181,8 +1205,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_naturetalent1" value="2" title="Attribute: naturetalent1" type="checkbox" />
-                    <input name="attr_naturetalent2" value="2" title="Attribute: naturetalent2" type="checkbox" />
+                    <input name="attr_naturetalent1" title="Attribute: naturetalent1" type="checkbox" value="2" />
+                    <input name="attr_naturetalent2" title="Attribute: naturetalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1207,6 +1231,8 @@
                 <button class="sheet-skill-roller" name="roll_perceptioncheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{perception_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Perception}} {{skill-roll=[[ 1d20!kh2 + @{perception_total} ]]}}">
                   Perception (<span name="attr_perception_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_perceptiontalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_perceptiontalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_perception_total" readonly title="Attribute: perception_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_perception_options_flag" type="checkbox" />
@@ -1214,8 +1240,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_perceptiontalent1" value="2" title="Attribute: perceptiontalent1" type="checkbox" />
-                    <input name="attr_perceptiontalent2" value="2" title="Attribute: perceptiontalent2" type="checkbox" />
+                    <input name="attr_perceptiontalent1" title="Attribute: perceptiontalent1" type="checkbox" value="2" />
+                    <input name="attr_perceptiontalent2" title="Attribute: perceptiontalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1240,6 +1266,8 @@
                 <button class="sheet-skill-roller" name="roll_performcheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{perform_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Perform}} {{skill-roll=[[ 1d20!kh2 + @{perform_total} ]]}}">
                   Perform (<span name="attr_perform_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_performtalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_performtalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_perform_total" readonly title="Attribute: perform_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_perform_options_flag" type="checkbox" />
@@ -1247,8 +1275,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_performtalent1" value="2" title="Attribute: performtalent1" type="checkbox" />
-                    <input name="attr_performtalent2" value="2" title="Attribute: performtalent2" type="checkbox" />
+                    <input name="attr_performtalent1" title="Attribute: performtalent1" type="checkbox" value="2" />
+                    <input name="attr_performtalent2" title="Attribute: performtalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1273,6 +1301,8 @@
                 <button class="sheet-skill-roller" name="roll_handlingcheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{handling_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Pokémon Handling}} {{skill-roll=[[ 1d20!kh2 + @{handling_total} ]]}}">
                   Pokémon Handling (<span name="attr_handling_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_handlingtalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_handlingtalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_handling_total" readonly title="Attribute: handling_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_handling_options_flag" type="checkbox" />
@@ -1280,8 +1310,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_handlingtalent1" value="2" title="Attribute: handlingtalent1" type="checkbox" />
-                    <input name="attr_handlingtalent2" value="2" title="Attribute: handlingtalent2" type="checkbox" />
+                    <input name="attr_handlingtalent1" title="Attribute: handlingtalent1" type="checkbox" value="2" />
+                    <input name="attr_handlingtalent2" title="Attribute: handlingtalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1306,6 +1336,8 @@
                 <button class="sheet-skill-roller" name="roll_programmingcheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{programming_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Programming}} {{skill-roll=[[ 1d20!kh2 + @{programming_total} ]]}}">
                   Programming (<span name="attr_programming_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_programmingtalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_programmingtalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_programming_total" readonly title="Attribute: programming_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_programming_options_flag" type="checkbox" />
@@ -1313,8 +1345,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_programmingtalent1" value="2" title="Attribute: programmingtalent1" type="checkbox" />
-                    <input name="attr_programmingtalent2" value="2" title="Attribute: programmingtalent2" type="checkbox" />
+                    <input name="attr_programmingtalent1" title="Attribute: programmingtalent1" type="checkbox" value="2" />
+                    <input name="attr_programmingtalent2" title="Attribute: programmingtalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1339,6 +1371,8 @@
                 <button class="sheet-skill-roller" name="roll_sleightofhandcheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{sleightofhand_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Sleight of Hand}} {{skill-roll=[[ 1d20!kh2 + @{sleightofhand_total} ]]}}">
                   Sleight of Hand (<span name="attr_sleightofhand_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_sleightofhandtalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_sleightofhandtalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_sleightofhand_total" readonly title="Attribute: sleightofhand_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_sleightofhand_options_flag" type="checkbox" />
@@ -1346,8 +1380,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_sleightofhandtalent1" value="2" title="Attribute: sleightofhandtalent1" type="checkbox" />
-                    <input name="attr_sleightofhandtalent2" value="2" title="Attribute: sleightofhandtalent2" type="checkbox" />
+                    <input name="attr_sleightofhandtalent1" title="Attribute: sleightofhandtalent1" type="checkbox" value="2" />
+                    <input name="attr_sleightofhandtalent2" title="Attribute: sleightofhandtalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -1372,6 +1406,8 @@
                 <button class="sheet-skill-roller" name="roll_stealthcheck" type="roll"
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{stealth_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Stealth}} {{skill-roll=[[ 1d20!kh2 + @{stealth_total} ]]}}">
                   Stealth (<span name="attr_stealth_ability_mod"></span>)
+                  <input class="sheet-talent-pip-setting" name="attr_stealthtalent1" type="hidden" value="off" /><span class="sheet-talent1-pip"></span>
+                  <input class="sheet-talent-pip-setting" name="attr_stealthtalent2" type="hidden" value="off" /><span class="sheet-talent2-pip"></span>
                 </button>
                 <input class="sheet-skill-total" name="attr_stealth_total" readonly title="Attribute: stealth_total" type="number" />
                 <input checked class="sheet-options-flag" name="attr_stealth_options_flag" type="checkbox" />
@@ -1379,8 +1415,8 @@
                 <div class="sheet-options">
                   <span>
                     <b>Talents</b>
-                    <input name="attr_stealthtalent1" value="2" title="Attribute: stealthtalent1" type="checkbox" />
-                    <input name="attr_stealthtalent2" value="2" title="Attribute: stealthtalent2" type="checkbox" />
+                    <input name="attr_stealthtalent1" title="Attribute: stealthtalent1" type="checkbox" value="2" />
+                    <input name="attr_stealthtalent2" title="Attribute: stealthtalent2" type="checkbox" value="2" />
                   </span>
                   <span>
                     <b>Base Attribute</b>
@@ -5049,11 +5085,13 @@ const skillOptionsFlags = [
   // Skill Functions
   function getSkillAttributes(statLabel, talent1Label, talent2Label, userBonusLabel, totalLabel) {
     getAttrs([statLabel, talent1Label, talent2Label, totalLabel, userBonusLabel], function (attributes) {
-      const stat = parseInt(attributes[statLabel]) || 0;
-      const talent1 = parseInt(attributes[talent1Label]) || 0;
-      const talent2 = parseInt(attributes[talent2Label]) || 0;
-      const total = parseInt(attributes[totalLabel]) || -1;
-      const userBonus = parseInt(attributes[userBonusLabel]) || 0;
+      let stat = parseInt(attributes[statLabel]) || 0;
+      let talent1 = attributes[talent1Label];
+      let talent2 = attributes[talent2Label];
+      talent1 = isNaN(talent1) ? talent1 == "on" ? 2 : 0 : parseInt(talent1);
+      talent2 = isNaN(talent2) ? talent2 == "on" ? 2 : 0 : parseInt(talent2);
+      let total = parseInt(attributes[totalLabel]) || -1;
+      let userBonus = parseInt(attributes[userBonusLabel]) || 0;
 
       assignSkillTotal(totalLabel, stat, talent1, talent2, total, userBonus);
     });

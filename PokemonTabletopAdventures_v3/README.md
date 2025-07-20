@@ -23,6 +23,8 @@ Things we want to add to the character sheet, presented in no particular order o
 
 ## Changelog
 
+### Jul 20, 2025
+- Added skill talent pips to the skill roll button
 
 ### Jul 20, 2025
 - Added Collapse/Expand button for all skills, so a single click closes/opens them all
