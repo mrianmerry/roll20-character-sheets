@@ -598,6 +598,15 @@ div.sheet-collapsible-skill {
   position: relative;
 }
 
+div.sheet-collapsible-skill.sheet-capture {
+  grid-template-columns: 8fr 4fr 3fr 1fr;
+}
+
+div.sheet-collapsible-skill.sheet-capture > input.sheet-options-flag,
+div.sheet-collapsible-skill.sheet-capture > input.sheet-options-flag + span {
+  grid-column: 4;
+}
+
 div.sheet-collapsible-skill > input.sheet-options-flag,
 div.sheet-collapsible-skill > input.sheet-options-flag + span {
   display: block;
@@ -619,7 +628,7 @@ div.sheet-3col-centered {
 .sheet-collapsible-skill.sheet-capture > div.sheet-options {
   background: #0001;
   border: 1px solid var(--foreground-color);
-  grid-area: 2 / 1 / 2 / 4;
+  grid-area: 2 / 1 / 2 / 5;
   padding: 0 8px;
   padding-bottom: 4px;
   display: grid;
@@ -1188,85 +1197,74 @@ input.sheet-character-type[value="hybrid"] ~ div.sheet-tab-hybrid {
   background-color: var(--stat-spd);
 }
 
-input.sheet-skill-color-setting[value="ATK"] + input[type="number"].sheet-skill-total,
-input.sheet-skill-color-setting[value="ATK"] + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 input.sheet-skill-color-setting[value="ATK"] + button[type="roll"].sheet-skill-roller:hover,
-input.sheet-skill-color-setting[value="ATK"] + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+input.sheet-skill-color-setting[value="ATK"] + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+input.sheet-skill-color-setting[value="ATK"] + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   background-color: var(--stat-ro-atk);
   border-color: #555555;
 }
 
-input.sheet-skill-color-setting[value="DEF"] + input[type="number"].sheet-skill-total,
-input.sheet-skill-color-setting[value="DEF"] + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 input.sheet-skill-color-setting[value="DEF"] + button[type="roll"].sheet-skill-roller:hover,
-input.sheet-skill-color-setting[value="DEF"] + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+input.sheet-skill-color-setting[value="DEF"] + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+input.sheet-skill-color-setting[value="DEF"] + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   background-color: var(--stat-ro-def);
   border-color: #555555;
 }
 
-input.sheet-skill-color-setting[value="SPATK"] + input[type="number"].sheet-skill-total,
-input.sheet-skill-color-setting[value="SPATK"] + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 input.sheet-skill-color-setting[value="SPATK"] + button[type="roll"].sheet-skill-roller:hover,
-input.sheet-skill-color-setting[value="SPATK"] + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+input.sheet-skill-color-setting[value="SPATK"] + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+input.sheet-skill-color-setting[value="SPATK"] + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   background-color: var(--stat-ro-spatk);
   border-color: #555555;
 }
 
-input.sheet-skill-color-setting[value="SPDEF"] + input[type="number"].sheet-skill-total,
-input.sheet-skill-color-setting[value="SPDEF"] + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 input.sheet-skill-color-setting[value="SPDEF"] + button[type="roll"].sheet-skill-roller:hover,
-input.sheet-skill-color-setting[value="SPDEF"] + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+input.sheet-skill-color-setting[value="SPDEF"] + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+input.sheet-skill-color-setting[value="SPDEF"] + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   background-color: var(--stat-ro-spdef);
   border-color: #555555;
 }
 
-input.sheet-skill-color-setting[value="SPD"] + input[type="number"].sheet-skill-total,
-input.sheet-skill-color-setting[value="SPD"] + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 input.sheet-skill-color-setting[value="SPD"] + button[type="roll"].sheet-skill-roller:hover,
-input.sheet-skill-color-setting[value="SPD"] + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+input.sheet-skill-color-setting[value="SPD"] + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+input.sheet-skill-color-setting[value="SPD"] + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   background-color: var(--stat-ro-spd);
   border-color: #555555;
 }
 
-.sheet-darkmode input.sheet-skill-color-setting + input[type="number"].sheet-skill-total,
-.sheet-darkmode input.sheet-skill-color-setting + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 .sheet-darkmode input.sheet-skill-color-setting + button[type="roll"].sheet-skill-roller:hover,
-.sheet-darkmode input.sheet-skill-color-setting + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+.sheet-darkmode input.sheet-skill-color-setting + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+.sheet-darkmode input.sheet-skill-color-setting + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   color: #dddddd;
 }
 
-.sheet-darkmode input.sheet-skill-color-setting[value="ATK"] + input[type="number"].sheet-skill-total,
-.sheet-darkmode input.sheet-skill-color-setting[value="ATK"] + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 .sheet-darkmode input.sheet-skill-color-setting[value="ATK"] + button[type="roll"].sheet-skill-roller:hover,
-.sheet-darkmode input.sheet-skill-color-setting[value="ATK"] + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+.sheet-darkmode input.sheet-skill-color-setting[value="ATK"] + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+.sheet-darkmode input.sheet-skill-color-setting[value="ATK"] + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   border-color: var(--stat-atk);
 }
 
-.sheet-darkmode input.sheet-skill-color-setting[value="DEF"] + input[type="number"].sheet-skill-total,
-.sheet-darkmode input.sheet-skill-color-setting[value="DEF"] + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 .sheet-darkmode input.sheet-skill-color-setting[value="DEF"] + button[type="roll"].sheet-skill-roller:hover,
-.sheet-darkmode input.sheet-skill-color-setting[value="DEF"] + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+.sheet-darkmode input.sheet-skill-color-setting[value="DEF"] + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+.sheet-darkmode input.sheet-skill-color-setting[value="DEF"] + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   border-color: var(--stat-def);
 }
 
-.sheet-darkmode input.sheet-skill-color-setting[value="SPATK"] + input[type="number"].sheet-skill-total,
-.sheet-darkmode input.sheet-skill-color-setting[value="SPATK"] + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 .sheet-darkmode input.sheet-skill-color-setting[value="SPATK"] + button[type="roll"].sheet-skill-roller:hover,
-.sheet-darkmode input.sheet-skill-color-setting[value="SPATK"] + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+.sheet-darkmode input.sheet-skill-color-setting[value="SPATK"] + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+.sheet-darkmode input.sheet-skill-color-setting[value="SPATK"] + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   border-color: var(--stat-spatk);
 }
 
-.sheet-darkmode input.sheet-skill-color-setting[value="SPDEF"] + input[type="number"].sheet-skill-total,
-.sheet-darkmode input.sheet-skill-color-setting[value="SPDEF"] + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 .sheet-darkmode input.sheet-skill-color-setting[value="SPDEF"] + button[type="roll"].sheet-skill-roller:hover,
-.sheet-darkmode input.sheet-skill-color-setting[value="SPDEF"] + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+.sheet-darkmode input.sheet-skill-color-setting[value="SPDEF"] + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+.sheet-darkmode input.sheet-skill-color-setting[value="SPDEF"] + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   border-color: var(--stat-spdef);
 }
 
-.sheet-darkmode input.sheet-skill-color-setting[value="SPD"] + input[type="number"].sheet-skill-total,
-.sheet-darkmode input.sheet-skill-color-setting[value="SPD"] + .sheet-skill-total + button[type="roll"].sheet-skill-roller:hover,
 .sheet-darkmode input.sheet-skill-color-setting[value="SPD"] + button[type="roll"].sheet-skill-roller:hover,
-.sheet-darkmode input.sheet-skill-color-setting[value="SPD"] + button[type="roll"].sheet-skill-roller + .sheet-skill-total {
+.sheet-darkmode input.sheet-skill-color-setting[value="SPD"] + button[type="roll"].sheet-skill-roller + input.sheet-skill-total,
+.sheet-darkmode input.sheet-skill-color-setting[value="SPD"] + button[type="roll"].sheet-skill-roller + select + input.sheet-skill-total {
   border-color: var(--stat-spd);
 }
 

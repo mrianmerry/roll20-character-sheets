@@ -1464,48 +1464,47 @@
                   value="@{publicity_roll} &{template:@{skill_template}} {{base-attribute=@{capture_ability_mod}}} {{character-id=@{character_id}}} {{character-name=@{character_name}}} {{skill-name=Capture Pokémon}} {{skill-roll=@{capture_skill_roll}}}">
                   Capture Pokémon (<span name="attr_selected_ball"></span>)
                 </button>
+                <select class="sheet-ball-picker sheet-no-dropdown" name="attr_selected_ball" title="Select which Pokéball you want to use - this presumes the benefit is applied for conditional balls such as Quick Ball.
+                Attribute: selected_ball">
+                  <option>Basic Ball</option>
+                  <option>Great Ball</option>
+                  <option>Ultra Ball</option>
+                  <option>Park Ball</option>
+                  <option>Safari Ball</option>
+                  <option>Sport Ball</option>
+                  <option>Cherish Ball</option>
+                  <option>Luxury Ball</option>
+                  <option>Premier Ball</option>
+                  <option>Dive Ball</option>
+                  <option>Dusk Ball</option>
+                  <option>Fast Ball</option>
+                  <option>Lure Ball</option>
+                  <option>Quick Ball</option>
+                  <option>Repeat Ball</option>
+                  <option>1min Timer Ball</option>
+                  <option>2min Timer Ball</option>
+                  <option>Friend Ball</option>
+                  <option>Heal Ball</option>
+                  <option>Dream Ball</option>
+                  <option>Heavy Ball</option>
+                  <option>Level Ball</option>
+                  <option>Love Ball</option>
+                  <option>Moon Ball</option>
+                  <option>Nest Ball</option>
+                  <option>Type Ball</option>
+                  <option>Terrain Ball</option>
+                  <option>Save Ball</option>
+                  <option>Master Ball</option>
+                  <option>Custom Ball</option>
+                </select>
                 <input class="sheet-skill-total" name="attr_capture_roll_total" readonly title="Attribute: capture_roll_total" type="number" />
                 <input class="sheet-options-flag" name="attr_capture_options_flag" type="checkbox" />
                 <span name="attr_capture_flag">y</span>
                 <div class="sheet-options">
                   <span>
-                    <b>Selected Ball:</b>
-                    <select class="sheet-ball-picker sheet-no-dropdown" name="attr_selected_ball" title="Select which Pokéball you want to use - this presumes the benefit is applied for conditional balls such as Quick Ball.
-                    Attribute: selected_ball">
-                      <option>Basic Ball</option>
-                      <option>Great Ball</option>
-                      <option>Ultra Ball</option>
-                      <option>Park Ball</option>
-                      <option>Safari Ball</option>
-                      <option>Sport Ball</option>
-                      <option>Cherish Ball</option>
-                      <option>Luxury Ball</option>
-                      <option>Premier Ball</option>
-                      <option>Dive Ball</option>
-                      <option>Dusk Ball</option>
-                      <option>Fast Ball</option>
-                      <option>Lure Ball</option>
-                      <option>Quick Ball</option>
-                      <option>Repeat Ball</option>
-                      <option>1min Timer Ball</option>
-                      <option>2min Timer Ball</option>
-                      <option>Friend Ball</option>
-                      <option>Heal Ball</option>
-                      <option>Dream Ball</option>
-                      <option>Heavy Ball</option>
-                      <option>Level Ball</option>
-                      <option>Love Ball</option>
-                      <option>Moon Ball</option>
-                      <option>Nest Ball</option>
-                      <option>Type Ball</option>
-                      <option>Terrain Ball</option>
-                      <option>Save Ball</option>
-                      <option>Master Ball</option>
-                      <option>Custom Ball</option>
-                    </select>
                     <span title="The modifier applied to your capture rolls because of your selected Pokéball. This value can be configured for custom balls in the Configuration page.
                     Attribute: capture_display">
-                      <b>Modifier:</b>
+                      <b>Selected Ball Capture Modifier:</b>
                       <input class="sheet-total-display" name="attr_capture_display" readonly type="text" />
                     </span>
                   </span>
